@@ -21,7 +21,7 @@ function App() {
 						<Route path="/tvshow/:tvshowId">
 							<TvShowDetailView />
 						</Route>
-						<Route path="/">
+						<Route path="/" exact>
 							<HomeView />
 						</Route>
 					</Suspense>

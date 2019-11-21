@@ -1,7 +1,15 @@
 .layout-app__header {
 	background-color: #081c24;
+	padding: 10px 10% 10px 10%;
+}
+
+.layout-app__main {
+	margin: 20px 10% 20px 10%;
+}
+
+.layout-app__title {
+	text-decoration: none;
 	color: #01D277;
 	font-size: 32px;
 	font-weight: 600;
-	padding: 10px 10% 10px 10%;
 }
