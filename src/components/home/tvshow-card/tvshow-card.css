@@ -1,0 +1,28 @@
+.tvshow-card {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	margin-bottom: 40px;
+}
+
+.tvshow-card__footer {
+	margin: 10px 5px 10px 10px;
+}
+
+.tvshow-card__info {
+	display: inline-block;
+	margin-left: 15px;
+}
+
+.tvshow-card__title,
+.tvshow-card__date {
+	display: block;
+}
+
+.tvshow-card__title {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.tvshow-card__date {
+	color: #666666;
+	font-size: 14px;
+}
