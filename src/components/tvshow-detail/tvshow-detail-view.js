@@ -1,7 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import MiniCard from '../shared/mini-card/mini-card';
+
+import './tvshow-detail-view.css';
 
 export default function TvShowDetailView({ tvShow = {} }) {
+	console.log({ tvShow });
 	const {
+		id = 69625,
 		name = 'Rick and Morty',
 		posterPath = '/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg',
 		firstAirDate = '2003-12-02',
@@ -21,13 +27,70 @@ export default function TvShowDetailView({ tvShow = {} }) {
 				<section className="tvshow-detail__info-container">
 					<div className="tvshow-detail__title">
 						<h1 className="tvshow-detail__name">{name}</h1>
-						<span className="tvshow-detail__year">{firstAirDate}</span>
-						<div className="tvshow-detail__rating">{rating}</div>
+						<span className="tvshow-detail__year">({firstAirDate})</span>
+						<span className="tvshow-detail__rating">{rating}</span>
 					</div>
 					<h2 className="tvshow-detail__overview-title">Overview</h2>
 					<p className="tvshow-detail__overview-description">{overview}</p>
 				</section>
 			</div>
+
+			<hr className="tvshow-detail__separator"/>
+
+			<section className="tvshow-detail__cast">
+				<h2 className="tvshow-detail__cast-title">Tv Show Cast</h2>
+				<div className="tvshow-detail__characters">
+					<MiniCard
+						mediaUrl="https://image.tmdb.org/t/p/w138_and_h175_face/xLZHw2muESIS7zuWFM5yci6rXer.jpg"
+						title="Justin Roiland"
+						subtitle="Rick Sánchez"
+					/>
+					<MiniCard
+						mediaUrl="https://image.tmdb.org/t/p/w138_and_h175_face/xLZHw2muESIS7zuWFM5yci6rXer.jpg"
+						title="Justin Roiland"
+						subtitle="Rick Sánchez"
+					/>
+					<MiniCard
+						mediaUrl="https://image.tmdb.org/t/p/w138_and_h175_face/xLZHw2muESIS7zuWFM5yci6rXer.jpg"
+						title="Justin Roiland"
+						subtitle="Rick Sánchez"
+					/>
+				</div>
+			</section>
+
+			<hr className="tvshow-detail__separator"/>
+
+			<section className="tvshow-detail__seasons-container">
+				<h2 className="tvshow-detail__seasons-title">Seasons</h2>
+				<Link to={`/tvshow/${id}/season/4`}>
+					<MiniCard 
+						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
+						title="Season 4"
+						subtitle="2019 | 5 Episodes"
+					/>
+				</Link>
+				<Link to={`/tvshow/${id}/season/3`}>
+					<MiniCard 
+						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
+						title="Season 3"
+						subtitle="2016 | 15 Episodes"
+					/>
+				</Link>
+				<Link to={`/tvshow/${id}/season/2`}>
+					<MiniCard 
+						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
+						title="Season 2"
+						subtitle="2015 | 10 Episodes"
+					/>
+				</Link>
+				<Link to={`/tvshow/${id}/season/1`}>
+					<MiniCard 
+						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
+						title="Season 1"
+						subtitle="2014 | 12 Episodes"
+					/>
+				</Link>
+			</section>
 		</section>
 	)
 }

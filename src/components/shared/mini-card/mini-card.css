@@ -1,0 +1,20 @@
+.mini-card {
+	display: inline-block;
+	margin-right: 15px;
+	max-width: 140px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mini-card__title {
+	display: inline-block;
+	font-weight: bold;
+	margin-top: 10px;
+	padding-left: 10px;
+}
+
+.mini-card__subtitle {
+	display: inline-block;
+	font-style: italic;
+	padding-left: 10px;
+	margin-bottom: 15px;
+}
