@@ -66,28 +66,28 @@ export default function TvShowDetailView({ tvShow = {} }) {
 					<MiniCard 
 						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
 						title="Season 4"
-						subtitle="2019 | 5 Episodes"
+						subtitle={<span>(2019)<br/>5 Episodes</span>}
 					/>
 				</Link>
 				<Link to={`/tvshow/${id}/season/3`}>
 					<MiniCard 
 						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
 						title="Season 3"
-						subtitle="2016 | 15 Episodes"
+						subtitle={<span>(2016)<br/>15 Episodes</span>}
 					/>
 				</Link>
 				<Link to={`/tvshow/${id}/season/2`}>
 					<MiniCard 
 						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
 						title="Season 2"
-						subtitle="2015 | 10 Episodes"
+						subtitle={<span>(2015)<br/>10 Episodes</span>}
 					/>
 				</Link>
 				<Link to={`/tvshow/${id}/season/1`}>
 					<MiniCard 
 						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
 						title="Season 1"
-						subtitle="2014 | 12 Episodes"
+						subtitle={<span>(2014)<br/>12 Episodes</span>}
 					/>
 				</Link>
 			</section>
