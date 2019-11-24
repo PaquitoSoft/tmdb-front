@@ -2,17 +2,55 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import MiniCard from '../shared/mini-card/mini-card';
 
+import TVSHOW_DETAIL_MOCK from '../../fixtures/tvshow-detail.json';
+
 import './tvshow-detail-view.css';
 
-export default function TvShowDetailView({ tvShow = {} }) {
-	console.log({ tvShow });
+function CharacterMiniCard({ character }) {
 	const {
-		id = 69625,
-		name = 'Rick and Morty',
-		posterPath = '/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg',
-		firstAirDate = '2003-12-02',
-		rating = 78,
-		overview = "Rick is a mentally-unbalanced but scientifically-gifted old man who has recently reconnected with his family. He spends most of his time involving his young grandson Morty in dangerous, outlandish adventures throughout space and alternate universes. Compounded with Morty's already unstable family life, these events cause Morty much distress at home and school."
+		imagePath,
+		name,
+		actorName
+	} = character;
+
+	return (
+		<MiniCard
+			mediaUrl={`https://image.tmdb.org/t/p/w138_and_h175_face/${imagePath}`}
+			title={actorName}
+			subtitle={name}
+		/>
+	);
+}
+
+function SeasonMiniCard({ season, tvShowId }) {
+	const {
+		posterPath,
+		seasonNumber,
+		airDate,
+		episodesCount
+	} = season;
+	
+	return (
+		<Link to={`/tvshow/${tvShowId}/season/${seasonNumber}`}>
+			<MiniCard 
+				mediaUrl={`https://image.tmdb.org/t/p/w130_and_h195_bestv2${posterPath}`}
+				title={`Season ${seasonNumber + 1}`}
+				subtitle={<span>({airDate})<br/>{episodesCount} Episodes</span>}
+			/>
+		</Link>
+	);
+}
+
+export default function TvShowDetailView({ tvShow = TVSHOW_DETAIL_MOCK }) {
+	const {
+		id,
+		name,
+		posterPath,
+		firstAirDate,
+		overview,
+		votesAverage,
+		seasons = [],
+		cast = []
 	} = tvShow;
 	return (
 		<section className="tvshow-detail">
@@ -28,7 +66,7 @@ export default function TvShowDetailView({ tvShow = {} }) {
 					<div className="tvshow-detail__title">
 						<h1 className="tvshow-detail__name">{name}</h1>
 						<span className="tvshow-detail__year">({firstAirDate})</span>
-						<span className="tvshow-detail__rating">{rating}</span>
+						<span className="tvshow-detail__rating">{votesAverage}</span>
 					</div>
 					<h2 className="tvshow-detail__overview-title">Overview</h2>
 					<p className="tvshow-detail__overview-description">{overview}</p>
@@ -40,21 +78,9 @@ export default function TvShowDetailView({ tvShow = {} }) {
 			<section className="tvshow-detail__cast">
 				<h2 className="tvshow-detail__cast-title">Tv Show Cast</h2>
 				<div className="tvshow-detail__characters">
-					<MiniCard
-						mediaUrl="https://image.tmdb.org/t/p/w138_and_h175_face/xLZHw2muESIS7zuWFM5yci6rXer.jpg"
-						title="Justin Roiland"
-						subtitle="Rick Sánchez"
-					/>
-					<MiniCard
-						mediaUrl="https://image.tmdb.org/t/p/w138_and_h175_face/xLZHw2muESIS7zuWFM5yci6rXer.jpg"
-						title="Justin Roiland"
-						subtitle="Rick Sánchez"
-					/>
-					<MiniCard
-						mediaUrl="https://image.tmdb.org/t/p/w138_and_h175_face/xLZHw2muESIS7zuWFM5yci6rXer.jpg"
-						title="Justin Roiland"
-						subtitle="Rick Sánchez"
-					/>
+					{cast.map(character => (
+						<CharacterMiniCard key={character.id} character={character} />
+					))}
 				</div>
 			</section>
 
@@ -62,34 +88,11 @@ export default function TvShowDetailView({ tvShow = {} }) {
 
 			<section className="tvshow-detail__seasons-container">
 				<h2 className="tvshow-detail__seasons-title">Seasons</h2>
-				<Link to={`/tvshow/${id}/season/4`}>
-					<MiniCard 
-						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
-						title="Season 4"
-						subtitle={<span>(2019)<br/>5 Episodes</span>}
-					/>
-				</Link>
-				<Link to={`/tvshow/${id}/season/3`}>
-					<MiniCard 
-						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
-						title="Season 3"
-						subtitle={<span>(2016)<br/>15 Episodes</span>}
-					/>
-				</Link>
-				<Link to={`/tvshow/${id}/season/2`}>
-					<MiniCard 
-						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
-						title="Season 2"
-						subtitle={<span>(2015)<br/>10 Episodes</span>}
-					/>
-				</Link>
-				<Link to={`/tvshow/${id}/season/1`}>
-					<MiniCard 
-						mediaUrl="https://image.tmdb.org/t/p/w130_and_h195_bestv2/ylL3eViYKBhtjaqVe4pLMslVBjR.jpg"
-						title="Season 1"
-						subtitle={<span>(2014)<br/>12 Episodes</span>}
-					/>
-				</Link>
+				<div className="tvshow-detail__seasons-list">
+					{seasons.map(season => (
+						<SeasonMiniCard key={season.seasonNumber} season={season} tvShowId={id} />
+					))}
+				</div>
 			</section>
 		</section>
 	)
