@@ -12,21 +12,21 @@ const SeasonDetailView = lazy(() => import('./components/season-detail/season-de
 function App() {
 	return (
 		<Router>
-			<Layout>
-				<Switch>
-					<Suspense fallback={<div>Loading...</div>}>
-						<Route path="/tvshow/:tvshowId/season/:seasonNumber">
-							<SeasonDetailView />
-						</Route>
-						<Route path="/tvshow/:tvshowId">
-							<TvShowDetailView />
-						</Route>
-						<Route path="/" exact>
-							<HomeView />
-						</Route>
-					</Suspense>
-				</Switch>
-			</Layout>
+			<Suspense fallback={<div>Loading...</div>}>
+				<Layout>
+					<Switch>
+							<Route path="/tvshow/:tvshowId/season/:seasonNumber">
+								<SeasonDetailView />
+							</Route>
+							<Route path="/tvshow/:tvshowId">
+								<TvShowDetailView />
+							</Route>
+							<Route path="/" exact>
+								<HomeView />
+							</Route>
+					</Switch>
+				</Layout>
+			</Suspense>
 		</Router>
 	);
 }
