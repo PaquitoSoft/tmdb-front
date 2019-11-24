@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Layout from './components/layout/layout-app';
+import ScrollToTop from './components/shared/scroll-to-top/scroll-to-top';
 
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
 		<Router>
 			<Suspense fallback={<div>Loading...</div>}>
 				<Layout>
+					<ScrollToTop />
 					<Switch>
 							<Route path="/tvshow/:tvshowId/season/:seasonNumber">
 								<SeasonDetailView />
