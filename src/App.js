@@ -10,9 +10,14 @@ const HomeView = lazy(() => import('./components/home/home-view'));
 const TvShowDetailView = lazy(() => import('./components/tvshow-detail/tvshow-detail-view'));
 const SeasonDetailView = lazy(() => import('./components/season-detail/season-detail-view'));
 
+let basename = '/';
+if (process.env.NODE_ENV === 'production') {
+	basename = '/tmdb-front';
+}
+
 function App() {
 	return (
-		<Router>
+		<Router basename={basename}>
 			<Suspense fallback={<div>Loading...</div>}>
 				<Layout>
 					<ScrollToTop />
