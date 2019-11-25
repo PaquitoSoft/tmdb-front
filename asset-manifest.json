@@ -3,8 +3,8 @@
     "main.css": "/tmdb-front/static/css/main.764d771e.chunk.css",
     "main.js": "/tmdb-front/static/js/main.a7684acd.chunk.js",
     "main.js.map": "/tmdb-front/static/js/main.a7684acd.chunk.js.map",
-    "runtime-main.js": "/tmdb-front/static/js/runtime-main.f0b1f544.js",
-    "runtime-main.js.map": "/tmdb-front/static/js/runtime-main.f0b1f544.js.map",
+    "runtime-main.js": "/tmdb-front/static/js/runtime-main.58812123.js",
+    "runtime-main.js.map": "/tmdb-front/static/js/runtime-main.58812123.js.map",
     "static/js/2.d46c170c.chunk.js": "/tmdb-front/static/js/2.d46c170c.chunk.js",
     "static/js/2.d46c170c.chunk.js.map": "/tmdb-front/static/js/2.d46c170c.chunk.js.map",
     "static/css/3.e7250191.chunk.css": "/tmdb-front/static/css/3.e7250191.chunk.css",
@@ -14,10 +14,10 @@
     "static/js/4.ac13278b.chunk.js": "/tmdb-front/static/js/4.ac13278b.chunk.js",
     "static/js/4.ac13278b.chunk.js.map": "/tmdb-front/static/js/4.ac13278b.chunk.js.map",
     "static/css/5.d6bc2cf6.chunk.css": "/tmdb-front/static/css/5.d6bc2cf6.chunk.css",
-    "static/js/5.cedb58dc.chunk.js": "/tmdb-front/static/js/5.cedb58dc.chunk.js",
-    "static/js/5.cedb58dc.chunk.js.map": "/tmdb-front/static/js/5.cedb58dc.chunk.js.map",
+    "static/js/5.09ed7d4a.chunk.js": "/tmdb-front/static/js/5.09ed7d4a.chunk.js",
+    "static/js/5.09ed7d4a.chunk.js.map": "/tmdb-front/static/js/5.09ed7d4a.chunk.js.map",
     "index.html": "/tmdb-front/index.html",
-    "precache-manifest.ae72c078f1fc67ec03ced9724a37566c.js": "/tmdb-front/precache-manifest.ae72c078f1fc67ec03ced9724a37566c.js",
+    "precache-manifest.a3de7405605573af1c2fe72b14b9d3fe.js": "/tmdb-front/precache-manifest.a3de7405605573af1c2fe72b14b9d3fe.js",
     "service-worker.js": "/tmdb-front/service-worker.js",
     "static/css/3.e7250191.chunk.css.map": "/tmdb-front/static/css/3.e7250191.chunk.css.map",
     "static/css/4.40224ba2.chunk.css.map": "/tmdb-front/static/css/4.40224ba2.chunk.css.map",
@@ -25,7 +25,7 @@
     "static/css/main.764d771e.chunk.css.map": "/tmdb-front/static/css/main.764d771e.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.f0b1f544.js",
+    "static/js/runtime-main.58812123.js",
     "static/js/2.d46c170c.chunk.js",
     "static/css/main.764d771e.chunk.css",
     "static/js/main.a7684acd.chunk.js"
