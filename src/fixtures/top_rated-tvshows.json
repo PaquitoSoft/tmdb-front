@@ -1,0 +1,162 @@
+[
+    {
+        "id": 100,
+        "name": "I Am Not an Animal",
+        "backdropImagePath": "/ok1YiumqOCYzUmuTktnupOQOvV5.jpg",
+        "posterPath": "/nMhv6jG5dtLdW7rgguYWvpbk0YN.jpg",
+        "votesAverage": 9.5,
+        "firstAirDate": "2004-05-10"
+    },
+    {
+        "id": 87108,
+        "name": "Chernobyl",
+        "backdropImagePath": "/cDpR6URVghK5LC7G7NgPkCP8x6E.jpg",
+        "posterPath": "/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
+        "votesAverage": 8.6,
+        "firstAirDate": "2019-05-06"
+    },
+    {
+        "id": 60625,
+        "name": "Rick and Morty",
+        "backdropImagePath": "/mzzHr6g1yvZ05Mc7hNj3tUdy2bM.jpg",
+        "posterPath": "/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg",
+        "votesAverage": 8.6,
+        "firstAirDate": "2013-12-02"
+    },
+    {
+        "id": 1396,
+        "name": "Breaking Bad",
+        "backdropImagePath": "/hbgPoI0GBrXJfGjYNV2fMQU0xou.jpg",
+        "posterPath": "/1yeVJox3rjo2jBKrrihIMj7uoS9.jpg",
+        "votesAverage": 8.4,
+        "firstAirDate": "2008-01-20"
+    },
+    {
+        "id": 19885,
+        "name": "Sherlock",
+        "backdropImagePath": "/bvS50jBZXtglmLu72EAt5KgJBrL.jpg",
+        "posterPath": "/f9zGxLHGyQB10cMDZNY5ZcGKhZi.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "2010-07-25"
+    },
+    {
+        "id": 68595,
+        "name": "Planet Earth II",
+        "backdropImagePath": "/xIt4DDYipMPNu2HDBrhUS4ndSYb.jpg",
+        "posterPath": "/uy5QoTu8fc6fGXMCTMbpQJFUEB0.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "2016-11-06"
+    },
+    {
+        "id": 246,
+        "name": "Avatar: The Last Airbender",
+        "backdropImagePath": "/732azfQ0xUAJNQ48pPfVtCCLVlZ.jpg",
+        "posterPath": "/sB8V0pQtJZ17v8FLXMOcYz6045c.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "2005-02-21"
+    },
+    {
+        "id": 13916,
+        "name": "Death Note",
+        "backdropImagePath": "/A2j5g79EcWn1oTNCW9PSo7NZRfv.jpg",
+        "posterPath": "/g8hHbsRmHYoWYizhWCk87vpkrmy.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "2006-10-04"
+    },
+    {
+        "id": 66732,
+        "name": "Stranger Things",
+        "backdropImagePath": "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
+        "posterPath": "/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "2016-07-15"
+    },
+    {
+        "id": 60574,
+        "name": "Peaky Blinders",
+        "backdropImagePath": "/rWUC2x8q7Cu5Wrx2PKH0sYYmVx7.jpg",
+        "posterPath": "/jeWoeUQyHdxGFNZCrzbOUP78FiZ.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "2013-09-12"
+    },
+    {
+        "id": 33217,
+        "name": "Young Justice",
+        "backdropImagePath": "/3Yjbb4g4yJoXY12zYfV8bUm8C92.jpg",
+        "posterPath": "/oL31ADgSgVdgoJPRAdWISQBIO0w.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "2010-11-26"
+    },
+    {
+        "id": 40075,
+        "name": "Gravity Falls",
+        "backdropImagePath": "/sJjrJWsOCUUeVMexxANNC6s3dWV.jpg",
+        "posterPath": "/oGsgxjeZ9rd20eCJsGSMGgWvl4P.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "2012-06-15"
+    },
+    {
+        "id": 6357,
+        "name": "The Twilight Zone",
+        "backdropImagePath": "/lKdKgLoLPmnHoUXunrcSAuBhAJx.jpg",
+        "posterPath": "/7uY4pCOxbEdv4M8jTE4uMPVoSIW.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "1959-10-02"
+    },
+    {
+        "id": 890,
+        "name": "Neon Genesis Evangelion",
+        "backdropImagePath": "/myTetJyeVb6EIvSwaJ9c5jdRxcV.jpg",
+        "posterPath": "/4n063I6pRLaN3vAbd5y6Xx9b3PW.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "1995-10-04"
+    },
+    {
+        "id": 1438,
+        "name": "The Wire",
+        "backdropImagePath": "/aaNzIG6CweG9riEBKBZ39QZA61w.jpg",
+        "posterPath": "/dg7NuKDjmS6OzuNy33qt8kSkPA1.jpg",
+        "votesAverage": 8.3,
+        "firstAirDate": "2002-06-02"
+    },
+    {
+        "id": 46298,
+        "name": "Hunter x Hunter",
+        "backdropImagePath": "/ye4oayd3csx8psElvvQPdO2fgdD.jpg",
+        "posterPath": "/yWBcBIO9OrF3E85C5Arols6QNnG.jpg",
+        "votesAverage": 8.2,
+        "firstAirDate": "2011-10-02"
+    },
+    {
+        "id": 4613,
+        "name": "Band of Brothers",
+        "backdropImagePath": "/1LrtAhWPSEetJLjblXvnaYtl7eA.jpg",
+        "posterPath": "/yjqu0KEVAWz9eJQBvzrQMFlGD84.jpg",
+        "votesAverage": 8.2,
+        "firstAirDate": "2001-09-09"
+    },
+    {
+        "id": 615,
+        "name": "Futurama",
+        "backdropImagePath": "/r91cDHXENXwjG0eoGka0A4TtGjf.jpg",
+        "posterPath": "/iN0LOeE2JnJpIy4jF7imUjO6jwn.jpg",
+        "votesAverage": 8.2,
+        "firstAirDate": "1999-03-28"
+    },
+    {
+        "id": 31911,
+        "name": "Fullmetal Alchemist: Brotherhood",
+        "backdropImagePath": "/sPJbWoqud7YSsMHRXYxYc4b07ps.jpg",
+        "posterPath": "/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg",
+        "votesAverage": 8.2,
+        "firstAirDate": "2009-04-05"
+    },
+    {
+        "id": 713,
+        "name": "Chappelle's Show",
+        "backdropImagePath": "/2r5cvK4uqU7LiEBNsVzu5FlQPLn.jpg",
+        "posterPath": "/o5FI6Xu30m2HDim07f6bHAos9ZC.jpg",
+        "votesAverage": 8.2,
+        "firstAirDate": "2003-01-22"
+    }
+]

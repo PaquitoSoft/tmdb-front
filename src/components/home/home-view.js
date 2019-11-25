@@ -4,10 +4,16 @@ import { Link } from 'react-router-dom';
 import { useQueryString } from '../shared/use-query-string';
 import TvShowCard from './tvshow-card/tvshow-card';
 
+import POPULAR_TVSHOWS_MOCK from '../../fixtures/popular-tvshows.json';
+import TOP_RATED_TVSHOWS_MOCK from '../../fixtures/top_rated-tvshows.json';
+
 import './home-view.css';
 
-function FilterLink({ filterCode = 'popular', selectedFilter }) {
-	const filterName = (filterCode === 'popular') ? 'Popular' : 'Top Rated';
+const FILTER_CODE_POPULAR = 'popular';
+// const FILTER_CODE_TOP_RATED = 'top_rated';
+
+function FilterLink({ filterCode, selectedFilter }) {
+	const filterName = (filterCode === FILTER_CODE_POPULAR) ? 'Popular' : 'Top Rated';
 	const isSelected = (filterCode === selectedFilter);
 	return (
 		<Link 
@@ -18,18 +24,18 @@ function FilterLink({ filterCode = 'popular', selectedFilter }) {
 }
 
 export default function HomeView() {
-	const cards = [1,2,3,4,5];
 	const qs = useQueryString();
-	const filter = qs.get('filter');
-	
+	const selectedFilter = qs.get('filter') || FILTER_CODE_POPULAR;
+	const tvShows = (selectedFilter === FILTER_CODE_POPULAR) ? POPULAR_TVSHOWS_MOCK : TOP_RATED_TVSHOWS_MOCK;
+
 	return (
 		<section className="home-view">
 			<div className="home-view__type-selector">
-				<FilterLink filterCode="popular" selectedFilter={filter} />
-				<FilterLink filterCode="top-rated" selectedFilter={filter} />
+				<FilterLink filterCode="popular" selectedFilter={selectedFilter} />
+				<FilterLink filterCode="top-rated" selectedFilter={selectedFilter} />
 			</div>
 			<div className="home-view__grid">
-				{cards.map(index => <TvShowCard key={index} />)}
+				{tvShows.map(tvShow => <TvShowCard key={tvShow.id} tvShow={tvShow} />)}
 			</div>
 		</section>
 	);

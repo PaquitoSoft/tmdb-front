@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link/*, useParams */} from 'react-router-dom';
 import MiniCard from '../shared/mini-card/mini-card';
 
 import TVSHOW_DETAIL_MOCK from '../../fixtures/tvshow-detail.json';
@@ -35,7 +35,7 @@ function SeasonMiniCard({ season, tvShowId }) {
 			<MiniCard 
 				mediaUrl={`https://image.tmdb.org/t/p/w130_and_h195_bestv2${posterPath}`}
 				title={`Season ${seasonNumber + 1}`}
-				subtitle={<span>({airDate})<br/>{episodesCount} Episodes</span>}
+				subtitle={<span>({(new Date(airDate).toDateString())})<br/>{episodesCount} Episodes</span>}
 			/>
 		</Link>
 	);
@@ -52,6 +52,8 @@ export default function TvShowDetailView({ tvShow = TVSHOW_DETAIL_MOCK }) {
 		seasons = [],
 		cast = []
 	} = tvShow;
+	// const { tvShowId } = useParams();
+	
 	return (
 		<section className="tvshow-detail">
 			<div className="tvshow-detail__main-info">
@@ -65,7 +67,7 @@ export default function TvShowDetailView({ tvShow = TVSHOW_DETAIL_MOCK }) {
 				<section className="tvshow-detail__info-container">
 					<div className="tvshow-detail__title">
 						<h1 className="tvshow-detail__name">{name}</h1>
-						<span className="tvshow-detail__year">({firstAirDate})</span>
+						<span className="tvshow-detail__year">({(new Date(firstAirDate).toDateString())})</span>
 						<span className="tvshow-detail__rating">{votesAverage}</span>
 					</div>
 					<h2 className="tvshow-detail__overview-title">Overview</h2>
