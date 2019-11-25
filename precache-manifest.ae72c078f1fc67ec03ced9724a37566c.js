@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b75bc7bf484c8229e0369dd880189c65",
+    "revision": "81b5c22c8f76997d5f8d5c980d442392",
     "url": "/tmdb-front/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tmdb-front/static/css/5.d6bc2cf6.chunk.css"
   },
   {
-    "revision": "64e2c4ad2d8b6d1aa41f",
+    "revision": "389b58bc51d640335dd1",
     "url": "/tmdb-front/static/css/main.764d771e.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tmdb-front/static/js/5.cedb58dc.chunk.js"
   },
   {
-    "revision": "64e2c4ad2d8b6d1aa41f",
-    "url": "/tmdb-front/static/js/main.7d00d801.chunk.js"
+    "revision": "389b58bc51d640335dd1",
+    "url": "/tmdb-front/static/js/main.a7684acd.chunk.js"
   },
   {
     "revision": "523c03ff37c56268df58",
