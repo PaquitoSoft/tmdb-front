@@ -35,7 +35,7 @@ function SeasonMiniCard({ season, tvShowId }) {
 			<MiniCard 
 				mediaUrl={`https://image.tmdb.org/t/p/w130_and_h195_bestv2${posterPath}`}
 				title={`Season ${seasonNumber + 1}`}
-				subtitle={<span>({(new Date(airDate).toDateString())})<br/>{episodesCount} Episodes</span>}
+				subtitle={<span>({airDate})<br/>{episodesCount} Episodes</span>}
 			/>
 		</Link>
 	);
