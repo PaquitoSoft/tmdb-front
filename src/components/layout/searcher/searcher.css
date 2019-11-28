@@ -1,0 +1,36 @@
+.searcher {
+	position: relative;
+}
+
+.searcher__search-term {
+	font-size: 16px;
+	background-color: transparent;
+	border: none;
+	width: 100%;
+	outline: none;
+	border-bottom: 1px solid #868E91;
+	line-height: 30px;
+}
+
+.searcher__results {
+	position: absolute;
+	background-color: #fff;
+	padding: 10px;
+	margin-top: 5px;
+	text-align: center;
+	max-height: 520px;
+	overflow-y: auto;
+	box-shadow: 2px 26px 31px -2px rgba(0,0,0,0.95);
+}
+
+.searcher__result {
+	margin-bottom: 15px;
+}
+
+/* TODO Extend MiniCard component to fit this styling */
+.searcher__results .mini-card__title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-left: 0;
+}

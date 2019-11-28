@@ -1,10 +1,10 @@
-.layout-app__header {
-	background-color: #081c24;
-	padding: 15px 10% 15px 10%;
-}
-
 .layout-app__main {
 	margin: 20px 10% 20px 10%;
+}
+
+.layout-app__title-container {
+	background-color: #081c24;
+	padding: 15px 10% 15px 10%;
 }
 
 .layout-app__title {
@@ -13,3 +13,9 @@
 	font-size: 32px;
 	font-weight: 600;
 }
+
+.layout-app__search-container {
+	padding: 5px 10% 15px 10%;
+	/*border: none;*/
+}
+
