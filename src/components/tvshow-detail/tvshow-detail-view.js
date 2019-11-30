@@ -29,7 +29,7 @@ function SeasonMiniCard({ season, tvShowId }) {
 		airDate,
 		episodesCount
 	} = season;
-	
+
 	return (
 		<Link to={`/tvshow/${tvShowId}/season/${seasonNumber}`}>
 			<MiniCard 
@@ -41,7 +41,48 @@ function SeasonMiniCard({ season, tvShowId }) {
 	);
 }
 
-export default function TvShowDetailView({ tvShow = TVSHOW_DETAIL_MOCK }) {
+export default function TvShowDetailView() {
+	const { tvShowId } = useParams();
+	const [tvShow, setTvShow] = useState(undefined);
+	const { apiClient } = useAppContext();
+
+	useEffect(() => {
+		apiClient.query({
+			query: `
+				query {
+					getTvShowDetails(tvShowId: ${parseInt(tvShowId, 10)}) {
+						id
+						name
+						posterPath
+						firstAirDate
+						overview
+						votesAverage
+						seasons {
+							seasonNumber
+							posterPath
+							airDate
+							episodesCount
+						}
+						cast {
+							id
+							imagePath
+							name
+							actorName
+						}
+					}
+				}
+			`
+		})
+		.then(result => {
+			if (result.errors) {
+				return console.error('Error getting data from server:', result.erros);
+			}
+			setTvShow(result.data.getTvShowDetails);
+		})
+	}, []);
+	
+	if (!tvShow) return null;
+	
 	const {
 		id,
 		name,
@@ -52,8 +93,7 @@ export default function TvShowDetailView({ tvShow = TVSHOW_DETAIL_MOCK }) {
 		seasons = [],
 		cast = []
 	} = tvShow;
-	// const { tvShowId } = useParams();
-	
+
 	return (
 		<section className="tvshow-detail">
 			<div className="tvshow-detail__main-info">

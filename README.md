@@ -9,3 +9,10 @@ This is a simple [React](https://reactjs.org/) front-end built for a workshop wh
 
 # Demo site
 You can test this demo site in [https://paquitosoft.github.io/tmdb-front/](https://paquitosoft.github.io/tmdb-front/)
+
+## Comparision points
+* Usage
+* Cache
+* Bundle size
+* Documentation
+* Testing
