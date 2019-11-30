@@ -18,6 +18,11 @@
 	margin-left: 15px;
 }
 
+.tvshow-cart__rating {
+	bottom: 10px;
+	position: relative;
+}
+
 .tvshow-card__title,
 .tvshow-card__date {
 	display: block;

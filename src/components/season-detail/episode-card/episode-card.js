@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import './episode-card.css';
+import RatingIcon from '../../shared/rating-icon/rating-icon';
 
 export default function EpisodeCard({ episode }) {
 	const {
@@ -12,7 +13,7 @@ export default function EpisodeCard({ episode }) {
 		overview
 	} = episode;
 	const [isOverviewVisible, toggleOverviewVisibility] = useState(false);
-
+	
 	return (
 		<div className="episode-card">
 			<img src={`https://image.tmdb.org/t/p/w454_and_h254_bestv2${imagePath}`} alt={name} className="episode-card__media"/>
@@ -22,7 +23,7 @@ export default function EpisodeCard({ episode }) {
 						<span className="episode-card__number">{episodeNumber}.&nbsp;</span>
 						<span className="episode-card__name">{name}</span>
 					</div>
-					<span className="episode-card__rating">{voteAverage.toFixed(1)}</span>
+					<RatingIcon className="episode-card__rating" ratingValue={voteAverage} />
 				</div>
 				<div className="episode-card__row">
 					<span className="episode-card__date">({(new Date(airDate).toDateString())})</span>

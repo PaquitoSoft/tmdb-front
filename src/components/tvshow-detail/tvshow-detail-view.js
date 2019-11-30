@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link/*, useParams */} from 'react-router-dom';
 import MiniCard from '../shared/mini-card/mini-card';
-
+ 
 import TVSHOW_DETAIL_MOCK from '../../fixtures/tvshow-detail.json';
+
+import RatingIcon from '../shared/rating-icon/rating-icon';
 
 import './tvshow-detail-view.css';
 
@@ -68,7 +70,11 @@ export default function TvShowDetailView({ tvShow = TVSHOW_DETAIL_MOCK }) {
 					<div className="tvshow-detail__title">
 						<h1 className="tvshow-detail__name">{name}</h1>
 						<span className="tvshow-detail__year">({(new Date(firstAirDate).toDateString())})</span>
-						<span className="tvshow-detail__rating">{votesAverage}</span>
+						<RatingIcon 
+							className="tvshow-detail__rating"
+							ratingValue={votesAverage}
+							size={RatingIcon.sizes.BIG}
+						/>
 					</div>
 					<h2 className="tvshow-detail__overview-title">Overview</h2>
 					<p className="tvshow-detail__overview-description">{overview}</p>
