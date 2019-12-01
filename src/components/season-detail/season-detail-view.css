@@ -24,3 +24,9 @@
 	display: inline-block;
 	margin-right: 6px;
 }
+
+@media screen and (max-width: 1000px) {
+	.season-detail__episodes .episode-card {
+		width: 48%;
+	}
+}

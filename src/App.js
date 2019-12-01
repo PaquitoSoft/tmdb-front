@@ -24,7 +24,7 @@ function App({ apiClient }) {
 					<Layout>
 						<ScrollToTop />
 						<Switch>
-								<Route path="/tvshow/:tvshowId/season/:seasonNumber">
+								<Route path="/tvshow/:tvShowId/season/:seasonNumber">
 									<SeasonDetailView />
 								</Route>
 								<Route path="/tvshow/:tvShowId">

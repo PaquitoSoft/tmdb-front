@@ -12,6 +12,7 @@ export default function EpisodeCard({ episode }) {
 		voteAverage,
 		overview
 	} = episode;
+	const isOverviewAvailable = overview.trim().length > 0;
 	const [isOverviewVisible, toggleOverviewVisibility] = useState(false);
 	
 	return (
@@ -23,14 +24,18 @@ export default function EpisodeCard({ episode }) {
 						<span className="episode-card__number">{episodeNumber}.&nbsp;</span>
 						<span className="episode-card__name">{name}</span>
 					</div>
-					<RatingIcon className="episode-card__rating" ratingValue={voteAverage} />
+					{voteAverage > 0 && 
+						<RatingIcon className="episode-card__rating" ratingValue={voteAverage} />
+					}
 				</div>
 				<div className="episode-card__row">
 					<span className="episode-card__date">({(new Date(airDate).toDateString())})</span>
-					<span 
-						className="episode-card__overview-link"
-						onClick={() => toggleOverviewVisibility(true)}
-					>See overview</span>
+					{isOverviewAvailable &&
+						<span 
+							className="episode-card__overview-link"
+							onClick={() => toggleOverviewVisibility(true)}
+						>See overview</span>
+					}
 				</div>
 			</div>
 			{isOverviewVisible && 
