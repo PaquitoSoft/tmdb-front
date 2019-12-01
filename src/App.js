@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import { AppProvider } from './components/app-context/app-context';
 import Layout from './components/layout/layout-app';
 import ScrollToTop from './components/shared/scroll-to-top/scroll-to-top';
 
@@ -15,26 +16,28 @@ if (process.env.NODE_ENV === 'production') {
 	basename = '/tmdb-front';
 }
 
-function App() {
+function App({ apiClient }) {
 	return (
-		<Router basename={basename}>
-			<Suspense fallback={<div>Loading...</div>}>
-				<Layout>
-					<ScrollToTop />
-					<Switch>
-							<Route path="/tvshow/:tvshowId/season/:seasonNumber">
-								<SeasonDetailView />
-							</Route>
-							<Route path="/tvshow/:tvshowId">
-								<TvShowDetailView />
-							</Route>
-							<Route path="/" exact>
-								<HomeView />
-							</Route>
-					</Switch>
-				</Layout>
-			</Suspense>
-		</Router>
+		<AppProvider apiClient={apiClient}>
+			<Router basename={basename}>
+				<Suspense fallback={<div>Loading...</div>}>
+					<Layout>
+						<ScrollToTop />
+						<Switch>
+								<Route path="/tvshow/:tvshowId/season/:seasonNumber">
+									<SeasonDetailView />
+								</Route>
+								<Route path="/tvshow/:tvShowId">
+									<TvShowDetailView />
+								</Route>
+								<Route path="/" exact>
+									<HomeView />
+								</Route>
+						</Switch>
+					</Layout>
+				</Suspense>
+			</Router>
+		</AppProvider>
 	);
 }
 

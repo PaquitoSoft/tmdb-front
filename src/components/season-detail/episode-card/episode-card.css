@@ -29,12 +29,6 @@
 
 .episode-card__rating {
 	margin-left: 15px;
-	background-color: #000000;
-	color: #ffffff;
-	border-radius: 5px;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 0 5px 0 5px;
 	position: absolute;
 	bottom: 1px;
 	right: 0;
