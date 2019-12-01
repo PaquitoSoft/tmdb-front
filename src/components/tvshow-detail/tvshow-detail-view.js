@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link/*, useParams */} from 'react-router-dom';
-import MiniCard from '../shared/mini-card/mini-card';
- 
-import TVSHOW_DETAIL_MOCK from '../../fixtures/tvshow-detail.json';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
+import { useAppContext } from '../app-context/app-context';
+
+import MiniCard from '../shared/mini-card/mini-card';
 import RatingIcon from '../shared/rating-icon/rating-icon';
 
 import './tvshow-detail-view.css';
@@ -81,7 +81,7 @@ export default function TvShowDetailView() {
 			}
 			setTvShow(result.data.getTvShowDetails);
 		})
-	}, []);
+	}, [ tvShowId ]);
 	
 	if (!tvShow) return null;
 	
