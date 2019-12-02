@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useQueryString } from '../shared/use-query-string';
-import { useAppContext } from '../app-context/app-context';
+import useApiClient from '../shared/use-api-client/use-api-client';
+
 import TvShowCard from './tvshow-card/tvshow-card';
 
 import './home-view.css';
 
 const FILTER_CODE_POPULAR = 'popular';
-// const FILTER_CODE_TOP_RATED = 'top_rated';
 
 function FilterLink({ filterCode, selectedFilter }) {
 	const filterName = (filterCode === FILTER_CODE_POPULAR) ? 'Popular' : 'Top Rated';
@@ -21,36 +21,37 @@ function FilterLink({ filterCode, selectedFilter }) {
 	)
 }
 
+const VIEW_DATA_QUERY = `
+query TvShowsByType($type: String!) {
+	getByType(type: $type) {
+		id
+		name
+		backdropImagePath
+		posterPath
+		votesAverage
+		firstAirDate
+	}
+}
+`;
+
 export default function HomeView() {
 	const qs = useQueryString();
 	const selectedFilter = qs.get('filter') || FILTER_CODE_POPULAR;
-	const [tvShows, setTvShows] = useState([]);
-	const { apiClient } = useAppContext();
+	
+	const {
+		isFetching,
+		data,
+		error
+	} = useApiClient({
+		query: VIEW_DATA_QUERY,
+		params: { 
+			type: selectedFilter
+		}
+	});
 
-	useEffect(() => {
-		console.log('API Client:', apiClient);
-		apiClient.query({
-			query: `
-				query {
-					getByType(type:"${selectedFilter}") {
-						id
-						name
-						backdropImagePath
-						posterPath
-						votesAverage
-						firstAirDate
-					}
-				}
-			`
-		})
-		.then(result => {
-			if (result.errors) {
-				return console.error('Error getting data from server:', result.erros);
-			}
-			setTvShows(result.data.getByType);
-		})
-	}, [selectedFilter]);
+	if (isFetching || error) return null;
 
+	const tvShows = data.getByType;
 	return (
 		<section className="home-view">
 			<div className="home-view__type-selector">

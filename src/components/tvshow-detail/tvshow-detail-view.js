@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-import { useAppContext } from '../app-context/app-context';
+import useApiClient from '../shared/use-api-client/use-api-client';
 
 import MiniCard from '../shared/mini-card/mini-card';
 import RatingIcon from '../shared/rating-icon/rating-icon';
@@ -36,54 +36,52 @@ function SeasonMiniCard({ season, tvShowId }) {
 		<Link to={`/tvshow/${tvShowId}/season/${seasonNumber}`}>
 			<MiniCard 
 				mediaUrl={`https://image.tmdb.org/t/p/w130_and_h195_bestv2${posterPath}`}
-				title={`Season ${seasonNumber + 1}`}
+				title={`Season ${seasonNumber}`}
 				subtitle={<span>({airDate})<br/>{episodesCount} Episodes</span>}
 			/>
 		</Link>
 	);
 }
 
+const VIEW_DATA_QUERY = `
+	query TvShowDetails($tvShowId: Int!) {
+		getTvShowDetails(tvShowId: $tvShowId) {
+			id
+			name
+			posterPath
+			firstAirDate
+			overview
+			votesAverage
+			seasons {
+				seasonNumber
+				posterPath
+				airDate
+				episodesCount
+			}
+			cast {
+				id
+				imagePath
+				name
+				actorName
+			}
+		}
+	}
+`;
+
 export default function TvShowDetailView() {
 	const { tvShowId } = useParams();
-	const [tvShow, setTvShow] = useState(undefined);
-	const { apiClient } = useAppContext();
-
-	useEffect(() => {
-		apiClient.query({
-			query: `
-				query {
-					getTvShowDetails(tvShowId: ${parseInt(tvShowId, 10)}) {
-						id
-						name
-						posterPath
-						firstAirDate
-						overview
-						votesAverage
-						seasons {
-							seasonNumber
-							posterPath
-							airDate
-							episodesCount
-						}
-						cast {
-							id
-							imagePath
-							name
-							actorName
-						}
-					}
-				}
-			`
-		})
-		.then(result => {
-			if (result.errors) {
-				return console.error('Error getting data from server:', result.erros);
-			}
-			setTvShow(result.data.getTvShowDetails);
-		})
-	}, [ tvShowId ]);
+	const {
+		isFetching,
+		data,
+		error
+	} = useApiClient({
+		query: VIEW_DATA_QUERY,
+		params: { 
+			tvShowId: parseInt(tvShowId, 0)
+		}
+	});
 	
-	if (!tvShow) return null;
+	if (isFetching || error) return null;
 	
 	const {
 		id,
@@ -94,7 +92,7 @@ export default function TvShowDetailView() {
 		votesAverage,
 		seasons = [],
 		cast = []
-	} = tvShow;
+	} = data.getTvShowDetails;
 
 	return (
 		<section className="tvshow-detail">
