@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
+import { useAppContext } from '../app-context/app-context';
 import useApiClient from '../shared/use-api-client/use-api-client';
 
 import MiniCard from '../shared/mini-card/mini-card';
@@ -52,6 +53,7 @@ const VIEW_DATA_QUERY = `
 			firstAirDate
 			overview
 			votesAverage
+			isFavorite
 			seasons {
 				seasonNumber
 				posterPath
@@ -68,8 +70,23 @@ const VIEW_DATA_QUERY = `
 	}
 `;
 
+const SET_FAVORITE_TVSHOW_MUTATION = `
+	mutation SaveFavoriteTvShow($tvShowId: Int!) {
+		saveFavoriteTvShow(tvShowId: $tvShowId)
+	}
+`;
+
+const UNSET_FAVORITE_TVSHOW_MUTATION = `
+	mutation RemoveFavoriteTvShow($tvShowId: Int!) {
+		removeFavoriteTvShow(tvShowId: $tvShowId)
+	}
+`;
+
+
 export default function TvShowDetailView() {
 	const { tvShowId } = useParams();
+	const { apiClient } = useAppContext();
+	const [tvShow, setTvShow] = useState();
 	const {
 		isFetching,
 		data,
@@ -80,9 +97,26 @@ export default function TvShowDetailView() {
 			tvShowId: parseInt(tvShowId, 0)
 		}
 	});
+
+	const saveFavorite = ({ tvShow, isFavorite }) => {
+		apiClient.query({ 
+			query: isFavorite ? UNSET_FAVORITE_TVSHOW_MUTATION : SET_FAVORITE_TVSHOW_MUTATION, 
+			variables: { tvShowId: tvShow.id} 
+		})
+		.then(() => {
+			setTvShow({
+				...tvShow,
+				isFavorite: !isFavorite
+			})
+		})
+		.catch(error => {
+			console.error(`Error setting favorite value for TvShow ${tvShowId}`);
+		});
+	}
 	
 	if (isFetching || error) return null;
 	
+	const _tvShow = tvShow || data.getTvShowDetails;
 	const {
 		id,
 		name,
@@ -90,9 +124,10 @@ export default function TvShowDetailView() {
 		firstAirDate,
 		overview,
 		votesAverage,
+		isFavorite,
 		seasons = [],
 		cast = []
-	} = data.getTvShowDetails;
+	} = _tvShow;
 
 	return (
 		<section className="tvshow-detail">
@@ -114,7 +149,17 @@ export default function TvShowDetailView() {
 							size={RatingIcon.sizes.BIG}
 						/>
 					</div>
-					<h2 className="tvshow-detail__overview-title">Overview</h2>
+					<div className="tvshow-detail__overview-title">
+						<h2 className="tvshow-detail__overview-label">Overview</h2>
+						<img 
+							className="tvshow-detail__favorite-icon" 
+							src={`/favorite${isFavorite ? '' : '_border'}-24px.svg`}
+							alt="Is not a favorite tv show"
+							onClick={() => {
+								saveFavorite({ isFavorite, tvShow: _tvShow });
+							}}
+						/>
+					</div>
 					<p className="tvshow-detail__overview-description">{overview}</p>
 				</section>
 			</div>

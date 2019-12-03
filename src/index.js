@@ -7,14 +7,29 @@ import * as serviceWorker from './serviceWorker';
 import FetchQL from 'fetchql';
 
 // TODO Read from configuration
-//const API_URL = 'https://tmdb-graphql-api.herokuapp.com';
+// const API_URL = 'https://tmdb-graphql-api.herokuapp.com';
 const API_URL = 'http://localhost:4000';
 
-function buildApiClient({ apiUrl }) {
+function getUserId() {
+	let userId = localStorage.getItem('ut');
+
+	if (!userId) {
+		userId = btoa(Date.now());
+		localStorage.setItem('ut', userId);
+	}
+	
+	return userId;
+}
+
+const userId = getUserId();
+
+function buildApiClient({ apiUrl, userId }) {
 	return new FetchQL({
 		url: apiUrl, // GraphQL server address
 		interceptors: [],
-		headers: {}, // customized headers of all requests,
+		headers: { // customized headers of all requests,
+			userToken: userId
+		},
 		onStart: function (requestQueueLength) {}, // callback of a new request queue
 		onEnd: function (requestQueueLength) {}, // callback of a request queue finished
 		omitEmptyVariables: false // remove null props(null or '') from the variables
@@ -22,7 +37,7 @@ function buildApiClient({ apiUrl }) {
 }
 
 ReactDOM.render(
-	<App apiClient={buildApiClient({ apiUrl: API_URL })} />, 
+	<App apiClient={buildApiClient({ apiUrl: API_URL, userId })} userId={userId} />,
 	document.getElementById('root')
 );
 

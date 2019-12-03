@@ -16,3 +16,10 @@ You can test this demo site in [https://paquitosoft.github.io/tmdb-front/](https
 * Bundle size
 * Documentation
 * Testing
+
+
+# TODO
+* Move data fetching to the routing mechanism
+* Loader component
+* Error display component
+* Dark mode
