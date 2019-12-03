@@ -6,6 +6,7 @@ import useApiClient from '../shared/use-api-client/use-api-client';
 
 import MiniCard from '../shared/mini-card/mini-card';
 import RatingIcon from '../shared/rating-icon/rating-icon';
+import FavoriteIcon from '../shared/favorite-icon/favorite-icon';
 
 import './tvshow-detail-view.css';
 
@@ -151,10 +152,8 @@ export default function TvShowDetailView() {
 					</div>
 					<div className="tvshow-detail__overview-title">
 						<h2 className="tvshow-detail__overview-label">Overview</h2>
-						<img 
-							className="tvshow-detail__favorite-icon" 
-							src={`/favorite${isFavorite ? '' : '_border'}-24px.svg`}
-							alt="Is not a favorite tv show"
+						<FavoriteIcon 
+							isActive={isFavorite} 
 							onClick={() => {
 								saveFavorite({ isFavorite, tvShow: _tvShow });
 							}}

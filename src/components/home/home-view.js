@@ -22,16 +22,17 @@ function FilterLink({ filterCode, selectedFilter }) {
 }
 
 const VIEW_DATA_QUERY = `
-query TvShowsByType($type: String!) {
-	getByType(type: $type) {
-		id
-		name
-		backdropImagePath
-		posterPath
-		votesAverage
-		firstAirDate
+	query TvShowsByType($type: String!) {
+		getByType(type: $type) {
+			id
+			name
+			backdropImagePath
+			posterPath
+			votesAverage
+			isFavorite
+			firstAirDate
+		}
 	}
-}
 `;
 
 export default function HomeView() {

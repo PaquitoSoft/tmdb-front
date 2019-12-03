@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import RatingIcon from '../../shared/rating-icon/rating-icon';
+import FavoriteIcon from '../../shared/favorite-icon/favorite-icon';
 
 import './tvshow-card.css';
 
@@ -11,6 +12,7 @@ export default function TvShowCard({ tvShow = {} }) {
 		name,
 		backdropImagePath,
 		votesAverage,
+		isFavorite,
 		firstAirDate
 	} = tvShow;
 
@@ -29,6 +31,7 @@ export default function TvShowCard({ tvShow = {} }) {
 					<span className="tvshow-card__title">{name}</span>
 					<span className="tvshow-card__date">{(new Date(firstAirDate).toDateString())}</span>
 				</div>
+				<FavoriteIcon className="tvshow-card__favorite-icon" isActive={isFavorite} />
 			</div>
 		</Link>
 	);

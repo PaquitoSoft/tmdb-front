@@ -11,6 +11,7 @@
 
 .tvshow-card__footer {
 	margin: 10px 5px 10px 10px;
+	position: relative;
 }
 
 .tvshow-card__info {
@@ -36,4 +37,11 @@
 .tvshow-card__date {
 	color: #666666;
 	font-size: 14px;
+}
+
+.tvshow-card__favorite-icon {
+	cursor: default;
+	position: absolute;
+	right: 5px;
+	top: 8px;
 }

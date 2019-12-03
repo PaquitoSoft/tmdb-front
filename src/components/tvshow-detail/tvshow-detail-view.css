@@ -33,10 +33,6 @@
 	margin: 0;
 }
 
-.tvshow-detail__favorite-icon {
-	cursor: pointer;
-}
-
 .tvshow-detail__overview-description {
 	margin-top: 10px;
 }
