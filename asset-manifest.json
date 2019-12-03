@@ -1,33 +1,33 @@
 {
   "files": {
-    "main.css": "/tmdb-front/static/css/main.559b2c16.chunk.css",
-    "main.js": "/tmdb-front/static/js/main.1f5f3bcf.chunk.js",
-    "main.js.map": "/tmdb-front/static/js/main.1f5f3bcf.chunk.js.map",
-    "runtime-main.js": "/tmdb-front/static/js/runtime-main.20e84941.js",
-    "runtime-main.js.map": "/tmdb-front/static/js/runtime-main.20e84941.js.map",
+    "main.css": "/tmdb-front/static/css/main.8b69de3b.chunk.css",
+    "main.js": "/tmdb-front/static/js/main.af3d4ad7.chunk.js",
+    "main.js.map": "/tmdb-front/static/js/main.af3d4ad7.chunk.js.map",
+    "runtime-main.js": "/tmdb-front/static/js/runtime-main.a7089d6f.js",
+    "runtime-main.js.map": "/tmdb-front/static/js/runtime-main.a7089d6f.js.map",
     "static/js/2.7c2a9437.chunk.js": "/tmdb-front/static/js/2.7c2a9437.chunk.js",
     "static/js/2.7c2a9437.chunk.js.map": "/tmdb-front/static/js/2.7c2a9437.chunk.js.map",
     "static/css/3.1c5cefca.chunk.css": "/tmdb-front/static/css/3.1c5cefca.chunk.css",
-    "static/js/3.465d8cf1.chunk.js": "/tmdb-front/static/js/3.465d8cf1.chunk.js",
-    "static/js/3.465d8cf1.chunk.js.map": "/tmdb-front/static/js/3.465d8cf1.chunk.js.map",
+    "static/js/3.6ea2aaf2.chunk.js": "/tmdb-front/static/js/3.6ea2aaf2.chunk.js",
+    "static/js/3.6ea2aaf2.chunk.js.map": "/tmdb-front/static/js/3.6ea2aaf2.chunk.js.map",
     "static/css/4.1b602ace.chunk.css": "/tmdb-front/static/css/4.1b602ace.chunk.css",
     "static/js/4.0ea03a76.chunk.js": "/tmdb-front/static/js/4.0ea03a76.chunk.js",
     "static/js/4.0ea03a76.chunk.js.map": "/tmdb-front/static/js/4.0ea03a76.chunk.js.map",
-    "static/css/5.270523a4.chunk.css": "/tmdb-front/static/css/5.270523a4.chunk.css",
-    "static/js/5.30caa45a.chunk.js": "/tmdb-front/static/js/5.30caa45a.chunk.js",
-    "static/js/5.30caa45a.chunk.js.map": "/tmdb-front/static/js/5.30caa45a.chunk.js.map",
+    "static/css/5.1140f4e1.chunk.css": "/tmdb-front/static/css/5.1140f4e1.chunk.css",
+    "static/js/5.fcedc7f3.chunk.js": "/tmdb-front/static/js/5.fcedc7f3.chunk.js",
+    "static/js/5.fcedc7f3.chunk.js.map": "/tmdb-front/static/js/5.fcedc7f3.chunk.js.map",
     "index.html": "/tmdb-front/index.html",
-    "precache-manifest.d22471e4255c85eaeffb23da165dce6c.js": "/tmdb-front/precache-manifest.d22471e4255c85eaeffb23da165dce6c.js",
+    "precache-manifest.6fe7906b1bc62f5e70e195efd56d1615.js": "/tmdb-front/precache-manifest.6fe7906b1bc62f5e70e195efd56d1615.js",
     "service-worker.js": "/tmdb-front/service-worker.js",
     "static/css/3.1c5cefca.chunk.css.map": "/tmdb-front/static/css/3.1c5cefca.chunk.css.map",
     "static/css/4.1b602ace.chunk.css.map": "/tmdb-front/static/css/4.1b602ace.chunk.css.map",
-    "static/css/5.270523a4.chunk.css.map": "/tmdb-front/static/css/5.270523a4.chunk.css.map",
-    "static/css/main.559b2c16.chunk.css.map": "/tmdb-front/static/css/main.559b2c16.chunk.css.map"
+    "static/css/5.1140f4e1.chunk.css.map": "/tmdb-front/static/css/5.1140f4e1.chunk.css.map",
+    "static/css/main.8b69de3b.chunk.css.map": "/tmdb-front/static/css/main.8b69de3b.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.20e84941.js",
+    "static/js/runtime-main.a7089d6f.js",
     "static/js/2.7c2a9437.chunk.js",
-    "static/css/main.559b2c16.chunk.css",
-    "static/js/main.1f5f3bcf.chunk.js"
+    "static/css/main.8b69de3b.chunk.css",
+    "static/js/main.af3d4ad7.chunk.js"
   ]
 }
