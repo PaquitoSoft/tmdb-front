@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { useAppContext } from '../app-context/app-context';
-import useApiClient from '../shared/use-api-client/use-api-client';
+import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
 
 import MiniCard from '../shared/mini-card/mini-card';
 import RatingIcon from '../shared/rating-icon/rating-icon';
@@ -92,7 +92,7 @@ export default function TvShowDetailView() {
 		isFetching,
 		data,
 		error
-	} = useApiClient({
+	} = useDataFetching({
 		query: VIEW_DATA_QUERY,
 		params: { 
 			tvShowId: parseInt(tvShowId, 0)

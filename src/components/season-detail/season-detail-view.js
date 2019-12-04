@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import useApiClient from '../shared/use-api-client/use-api-client';
+import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
 import EpisodeCard from './episode-card/episode-card';
 
 import './season-detail-view.css';
@@ -35,7 +35,7 @@ export default function SeasonDetailView() {
 		isFetching,
 		data,
 		error
-	} = useApiClient({
+	} = useDataFetching({
 		query: viewDataQuery,
 		params: { 
 			tvShowId: parseInt(tvShowId, 0), 

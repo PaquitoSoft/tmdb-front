@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useQueryString } from '../shared/use-query-string';
-import useApiClient from '../shared/use-api-client/use-api-client';
+import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
 
 import TvShowCard from './tvshow-card/tvshow-card';
 
@@ -43,7 +43,7 @@ export default function HomeView() {
 		isFetching,
 		data,
 		error
-	} = useApiClient({
+	} = useDataFetching({
 		query: VIEW_DATA_QUERY,
 		params: { 
 			type: selectedFilter

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAppContext } from '../../app-context/app-context';
 
-export default function useApiClient({
+export default function useDataFetching({
 	query, params = {}
 }) {
 	const { apiClient } = useAppContext();
