@@ -1,5 +1,6 @@
 .searcher {
 	position: relative;
+	z-index: 10;
 }
 
 .searcher__search-term {

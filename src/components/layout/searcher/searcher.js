@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useAppContext } from '../../app-context/app-context';
 import MiniCard from '../../shared/mini-card/mini-card';
-
-import POPULAR_TVSHOWS_MOCK from '../../../fixtures/popular-tvshows.json';
 
 import './searcher.css';
 
@@ -19,16 +18,36 @@ function SearchResult({ tvShow, onClick }) {
 	);
 }
 
+const SEARCH_QUERY = `
+	query SearchTvShows($searchTerm: String!) {
+		searchTvShows(searchTerm: $searchTerm) {
+			id
+			name
+			backdropImagePath
+		}
+	}
+`;
+
 export default function Searcher() {
 	const [hasFocus, setFocus] = useState(false);
 	const [searchTerm, setSearchTerm] = useState('');
 	const [searchResults, setSearchResults] = useState([]);
+	const { apiClient } = useAppContext();
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 
 		if (searchTerm) {
-			setSearchResults(POPULAR_TVSHOWS_MOCK);
+			apiClient.query({ 
+				query: SEARCH_QUERY,
+				variables: { searchTerm } 
+			})
+			.then(({ data: { searchTvShows: results} }) => {
+				setSearchResults(results);
+			})
+			.catch(error => {
+				console.error(`Error searching for Tv Shows  with term '${searchTerm}'`, error);
+			});
 		}
 	};
 
