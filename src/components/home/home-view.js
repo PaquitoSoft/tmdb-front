@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useQueryString } from '../shared/use-query-string';
 import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
 
+import Loader from '../shared/loader/loader';
 import TvShowCard from './tvshow-card/tvshow-card';
 
 import './home-view.css';
@@ -50,7 +51,8 @@ export default function HomeView() {
 		}
 	});
 
-	if (isFetching || error) return null;
+	if (isFetching) return <Loader />;
+	if (error) return null;
 
 	const tvShows = data.getByType;
 	return (

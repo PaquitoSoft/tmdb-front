@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { AppProvider } from './components/app-context/app-context';
 import Layout from './components/layout/layout-app';
+import Loader from './components/shared/loader/loader';
 import ScrollToTop from './components/shared/scroll-to-top/scroll-to-top';
 
 import './App.css';
@@ -20,7 +21,7 @@ function App({ apiClient, userId }) {
 	return (
 		<AppProvider apiClient={apiClient} userId={userId}>
 			<Router basename={basename}>
-				<Suspense fallback={<div>Loading...</div>}>
+				<Suspense fallback={<Loader />}>
 					<Layout>
 						<ScrollToTop />
 						<Switch>

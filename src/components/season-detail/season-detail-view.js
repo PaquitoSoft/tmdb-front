@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
+import Loader from '../shared/loader/loader';
+
 import EpisodeCard from './episode-card/episode-card';
 
 import './season-detail-view.css';
@@ -43,7 +45,8 @@ export default function SeasonDetailView() {
 		}
 	});
 	
-	if (isFetching || error) return null;
+	if (isFetching) return <Loader />;
+	if (error) return null;
 	
 	const {
 		name,

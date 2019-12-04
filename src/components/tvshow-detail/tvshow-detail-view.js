@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useAppContext } from '../app-context/app-context';
 import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
 
+import Loader from '../shared/loader/loader';
 import MiniCard from '../shared/mini-card/mini-card';
 import RatingIcon from '../shared/rating-icon/rating-icon';
 import FavoriteIcon from '../shared/favorite-icon/favorite-icon';
@@ -115,7 +116,8 @@ export default function TvShowDetailView() {
 		});
 	}
 	
-	if (isFetching || error) return null;
+	if (isFetching) return <Loader />;
+	if (error) return null;
 	
 	const _tvShow = tvShow || data.getTvShowDetails;
 	const {
