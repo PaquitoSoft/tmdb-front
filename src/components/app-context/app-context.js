@@ -2,12 +2,13 @@ import React, { useContext } from 'react';
 
 const AppContext = React.createContext({
 	apiClient: undefined,
-	userId: undefined
+	userId: undefined,
+	imagesConfig: {}
 });
 
-export function AppProvider({ apiClient, userId, children } ) {
+export function AppProvider({ apiClient, userId, imagesConfig, children } ) {
 	return (
-		<AppContext.Provider value={{ apiClient, userId }}>
+		<AppContext.Provider value={{ apiClient, userId, imagesConfig }}>
 			{children}
 		</AppContext.Provider>
 	);

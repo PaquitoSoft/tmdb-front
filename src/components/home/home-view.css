@@ -19,3 +19,7 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+
+.home-view__grid .tvshow-card {
+	width: 48%;
+}

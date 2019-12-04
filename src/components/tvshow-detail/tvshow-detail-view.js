@@ -18,9 +18,13 @@ function CharacterMiniCard({ character }) {
 		actorName
 	} = character;
 
+	const mediaUrl = imagePath ?
+		`https://image.tmdb.org/t/p/w138_and_h175_face/${imagePath}` :
+		'https://picsum.photos/id/1025/140/175?grayscale';
+
 	return (
 		<MiniCard
-			mediaUrl={`https://image.tmdb.org/t/p/w138_and_h175_face/${imagePath}`}
+			mediaUrl={mediaUrl}
 			title={actorName}
 			subtitle={name}
 		/>
@@ -35,10 +39,14 @@ function SeasonMiniCard({ season, tvShowId }) {
 		episodesCount
 	} = season;
 
+	const mediaUrl = posterPath ?
+		`https://image.tmdb.org/t/p/w130_and_h195_bestv2${posterPath}` :
+		'https://picsum.photos/id/1025/140/175?grayscale';
+
 	return (
 		<Link to={`/tvshow/${tvShowId}/season/${seasonNumber}`}>
 			<MiniCard 
-				mediaUrl={`https://image.tmdb.org/t/p/w130_and_h195_bestv2${posterPath}`}
+				mediaUrl={mediaUrl}
 				title={`Season ${seasonNumber}`}
 				subtitle={<span>({airDate})<br/>{episodesCount} Episodes</span>}
 			/>

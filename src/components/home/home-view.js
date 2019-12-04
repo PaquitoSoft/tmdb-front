@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { useQueryString } from '../shared/use-query-string';
+import useQueryString from '../shared/use-query-string/use-query-string';
 import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
 
 import Loader from '../shared/loader/loader';

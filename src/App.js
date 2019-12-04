@@ -17,9 +17,9 @@ if (process.env.NODE_ENV === 'production') {
 	basename = '/tmdb-front';
 }
 
-function App({ apiClient, userId }) {
+function App({ apiClient, userId, imagesConfig }) {
 	return (
-		<AppProvider apiClient={apiClient} userId={userId}>
+		<AppProvider apiClient={apiClient} userId={userId} imagesConfig={imagesConfig}>
 			<Router basename={basename}>
 				<Suspense fallback={<Loader />}>
 					<Layout>
