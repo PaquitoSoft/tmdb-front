@@ -2,10 +2,10 @@ import React from 'react';
 
 import './mini-card.css';
 
-export default function MiniCard({ mediaUrl, title, subtitle, className = '' }) {
+export default function MiniCard({ media, title, subtitle, className = '' }) {
 	return (
 		<div className={`mini-card ${className}`}>
-			<img className="mini-card__media" src={mediaUrl} alt={title}/>
+			{media}
 			<span className="mini-card__title">{title}</span>
 			<span className="mini-card__subtitle">{subtitle}</span>
 		</div>

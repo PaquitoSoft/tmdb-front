@@ -2,16 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useAppContext } from '../../app-context/app-context';
+import MediaImage from '../../shared/media-image/media-image';
 import MiniCard from '../../shared/mini-card/mini-card';
 
 import './searcher.css';
 
 function SearchResult({ tvShow, onClick }) {
+	const media = (
+		<MediaImage 
+			path={tvShow.backdropImagePath} 
+			type="backdrop" 
+			alt={tvShow.name}
+		/>
+	);
+
 	return (
 		<Link to={`/tvshow/${tvShow.id}`} onClick={onClick}>
 			<MiniCard
 				className="searcher__result"
-				mediaUrl={`https://image.tmdb.org/t/p/w130_and_h195_bestv2${tvShow.backdropImagePath}`} 
+				media={media}
 				title={tvShow.name} 
 			/>
 		</Link>

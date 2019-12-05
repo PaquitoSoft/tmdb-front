@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Image from '../../shared/image/image';
+import MediaImage from '../../shared/media-image/media-image';
 import RatingIcon from '../../shared/rating-icon/rating-icon';
 import FavoriteIcon from '../../shared/favorite-icon/favorite-icon';
 
@@ -20,7 +20,7 @@ export default function TvShowCard({ tvShow = {} }) {
 	return (
 		<Link className="tvshow-card" to={`/tvshow/${id}`}>
 			<div className="tvshow-card__poster">
-				<Image 
+				<MediaImage 
 					className="tvshow-card__poster-image" 
 					path={backdropImagePath} 
 					type="backdrop" 

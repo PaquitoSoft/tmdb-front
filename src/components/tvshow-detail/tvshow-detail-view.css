@@ -4,6 +4,7 @@
 
 .tvshow-detail__poster {
 	margin-right: 40px;
+	width: 100%;
 }
 
 .tvshow-detail__name {

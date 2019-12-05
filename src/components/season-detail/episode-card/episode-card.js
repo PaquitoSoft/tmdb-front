@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import './episode-card.css';
 import RatingIcon from '../../shared/rating-icon/rating-icon';
+import MediaImage from '../../shared/media-image/media-image';
 
 export default function EpisodeCard({ episode }) {
 	const {
@@ -17,7 +18,12 @@ export default function EpisodeCard({ episode }) {
 	
 	return (
 		<div className="episode-card">
-			<img src={`https://image.tmdb.org/t/p/w454_and_h254_bestv2${imagePath}`} alt={name} className="episode-card__media"/>
+			<MediaImage 
+				path={imagePath}
+				type="still"
+				className="episode-card__media"
+				alt={name}
+			/>
 			<div className="episode-card__info">
 				<div className="episode-card__row">
 					<div className="episode-card__title">

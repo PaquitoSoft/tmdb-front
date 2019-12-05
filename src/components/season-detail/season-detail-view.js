@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
 import Loader from '../shared/loader/loader';
@@ -58,9 +58,14 @@ export default function SeasonDetailView() {
 	return (
 		<section className="season-detail">
 			<header className="season-detail__header">
-				<h1 className="season-detail__season-name">{name}</h1>
-				<span className="season-detail__season-date">({(new Date(airDate).toDateString())})</span>
-				<span className="season-detail__tvshow-name"><i>{tvShow.name}</i></span>
+				<div>
+					<h1 className="season-detail__season-name">{name}</h1>
+					<span className="season-detail__season-date">({(new Date(airDate).toDateString())})</span>
+				</div>
+				<Link 
+					className="season-detail__tvshow-name"
+					to={`/tvshow/${tvShow.id}`}
+				><i>{tvShow.name}</i></Link>
 			</header>
 			<section className="season-detail__episodes">
 				{episodes.map(episode => 

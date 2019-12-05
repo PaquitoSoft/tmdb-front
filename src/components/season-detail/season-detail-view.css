@@ -14,8 +14,10 @@
 }
 
 .season-detail__tvshow-name {
-	display: block;
-	font-size: 24px;
+	font-size: 22px;
+}
+.season-detail__tvshow-name:hover {
+	text-decoration: underline;
 }
 
 .season-detail__episodes .episode-card {
