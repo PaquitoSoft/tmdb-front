@@ -14,6 +14,7 @@ export default function EpisodeCard({ episode }) {
 		overview
 	} = episode;
 	const isOverviewAvailable = overview.trim().length > 0;
+	const isYetToBeAired = (new Date(airDate)).getTime() > Date.now();
 	const [isOverviewVisible, toggleOverviewVisibility] = useState(false);
 	
 	return (
@@ -22,6 +23,7 @@ export default function EpisodeCard({ episode }) {
 				path={imagePath}
 				type="still"
 				sizes="30vw"
+				ratio={1.77}
 				className="episode-card__media"
 				alt={name}
 			/>
@@ -29,7 +31,9 @@ export default function EpisodeCard({ episode }) {
 				<div className="episode-card__row">
 					<div className="episode-card__title">
 						<span className="episode-card__number">{episodeNumber}.&nbsp;</span>
-						<span className="episode-card__name">{name}</span>
+						<span className={`episode-card__name ${isYetToBeAired ? 'episode-card__name--not-released' : ''}`}>
+							{isYetToBeAired ? 'Yet to be released' : name}
+						</span>
 					</div>
 					{voteAverage > 0 && 
 						<RatingIcon className="episode-card__rating" ratingValue={voteAverage} />
