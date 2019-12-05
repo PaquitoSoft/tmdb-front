@@ -20,6 +20,6 @@ You can test this demo site in [https://paquitosoft.github.io/tmdb-front/](https
 
 # TODO
 * Move data fetching to the routing mechanism
-* Loader component
-* Error display component
+* ~~Loader component~~
+* ~~Error display component~~
 * Dark mode

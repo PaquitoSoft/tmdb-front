@@ -35,8 +35,7 @@ export default function SeasonDetailView() {
 	const { tvShowId, seasonNumber } = useParams();
 	const {
 		isFetching,
-		data,
-		error
+		data
 	} = useDataFetching({
 		query: viewDataQuery,
 		params: { 
@@ -46,7 +45,7 @@ export default function SeasonDetailView() {
 	});
 	
 	if (isFetching) return <Loader />;
-	if (error) return null;
+	if (!data) return null;
 	
 	const {
 		name,

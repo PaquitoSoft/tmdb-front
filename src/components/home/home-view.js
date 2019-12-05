@@ -42,8 +42,7 @@ export default function HomeView() {
 	
 	const {
 		isFetching,
-		data,
-		error
+		data
 	} = useDataFetching({
 		query: VIEW_DATA_QUERY,
 		params: { 
@@ -52,7 +51,7 @@ export default function HomeView() {
 	});
 
 	if (isFetching) return <Loader />;
-	if (error) return null;
+	if (!data) return null;
 
 	const tvShows = data.getByType;
 	return (

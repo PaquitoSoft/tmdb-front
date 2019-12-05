@@ -4,10 +4,9 @@ import { useAppContext } from '../../app-context/app-context';
 export default function useDataFetching({
 	query, params = {}
 }) {
-	const { apiClient } = useAppContext();
+	const { apiClient, setError } = useAppContext();
 	const [isFetching, setIsFetching] = useState(true);
 	const [data, setData] = useState();
-	const [error, setError] = useState();
 	const paramsHash = btoa(JSON.stringify(params));
 
 	useEffect(() => {
@@ -25,8 +24,9 @@ export default function useDataFetching({
 			
 			setIsFetching(false);
 		})
-		.catch(error => {
-			setError(error);
+		.catch(async ([error]) => {
+			const { errors } = await error.stack.json();
+			setError(errors[0]);
 			setIsFetching(false);
 		});
 
@@ -36,7 +36,6 @@ export default function useDataFetching({
 
 	return {
 		isFetching,
-		data,
-		error
+		data
 	};
 }

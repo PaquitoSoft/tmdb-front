@@ -7,10 +7,6 @@ export default function MediaImage({ path, type = 'poster', size, className = ''
 	const sizes = imagesConfig[`${type}Sizes`];
 	
 	useEffect(() => {
-		console.log({
-			imageWidth: $img.current.clientWidth,
-			availableSizes: sizes
-		});
 		let imageUrl;
 		const { clientHeight, clientWidth } = $img.current;
 

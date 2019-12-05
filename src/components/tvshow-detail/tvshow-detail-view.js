@@ -108,8 +108,7 @@ export default function TvShowDetailView() {
 	const [tvShow, setTvShow] = useState();
 	const {
 		isFetching,
-		data,
-		error
+		data
 	} = useDataFetching({
 		query: VIEW_DATA_QUERY,
 		params: { 
@@ -134,7 +133,7 @@ export default function TvShowDetailView() {
 	}
 	
 	if (isFetching) return <Loader />;
-	if (error) return null;
+	if (!data) return null;
 	
 	const _tvShow = tvShow || data.getTvShowDetails;
 	const {

@@ -1,14 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 const AppContext = React.createContext({
 	apiClient: undefined,
 	userId: undefined,
-	imagesConfig: {}
+	imagesConfig: {},
+	error: null,
+	setError: () => false
 });
 
 export function AppProvider({ apiClient, userId, imagesConfig, children } ) {
+	const [error, setError] = useState(null);
+	const providerInitialValue = {
+		apiClient, 
+		userId, 
+		imagesConfig, 
+		error, 
+		setError
+	};
+
 	return (
-		<AppContext.Provider value={{ apiClient, userId, imagesConfig }}>
+		<AppContext.Provider value={providerInitialValue}>
 			{children}
 		</AppContext.Provider>
 	);
