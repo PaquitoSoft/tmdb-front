@@ -19,21 +19,19 @@ function CharacterMiniCard({ character }) {
 		actorName
 	} = character;
 
-	const media = (
-		<MediaImage 
-			path={imagePath} 
-			type="profile"
-			sizes="14vw"
-			alt={actorName}
-		/>
-	);
-
 	return (
-		<MiniCard
-			media={media}
-			title={actorName}
-			subtitle={name}
-		/>
+		<MiniCard className="tvshow-detail__character-card">
+			<MiniCard.Media>
+				<MediaImage 
+					path={imagePath} 
+					type="profile"
+					sizes="14vw"
+					alt={actorName}
+				/>
+			</MiniCard.Media>
+			<MiniCard.Title>{actorName}</MiniCard.Title>
+			<MiniCard.Subtitle>{name}</MiniCard.Subtitle>
+		</MiniCard>
 	);
 }
 
@@ -45,22 +43,24 @@ function SeasonMiniCard({ season, tvShowId }) {
 		episodesCount
 	} = season;
 
-	const media = (
-		<MediaImage 
-			path={posterPath} 
-			type="poster"
-			sizes="14vw"
-			alt={`Season ${seasonNumber}`}
-		/>
-	);
-
 	return (
-		<Link to={`/tvshow/${tvShowId}/season/${seasonNumber}`}>
-			<MiniCard 
-				media={media}
-				title={`Season ${seasonNumber}`}
-				subtitle={<span>({airDate})<br/>{episodesCount} Episodes</span>}
-			/>
+		<Link 
+			className="tvshow-detail__season-card"
+			to={`/tvshow/${tvShowId}/season/${seasonNumber}`}
+		>
+			<MiniCard>
+				<MiniCard.Media>
+					<MediaImage 
+						path={posterPath} 
+						type="poster"
+						sizes="14vw"
+						alt={`Season ${seasonNumber}`}
+					/>
+				</MiniCard.Media>
+				<MiniCard.Title>{`Season ${seasonNumber}`}</MiniCard.Title>
+				<MiniCard.Subtitle>{`(${airDate})`}</MiniCard.Subtitle>
+				<MiniCard.Subtitle>{`${episodesCount} Episodes`}</MiniCard.Subtitle>
+			</MiniCard>
 		</Link>
 	);
 }

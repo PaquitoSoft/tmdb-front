@@ -8,22 +8,23 @@ import MiniCard from '../../shared/mini-card/mini-card';
 import './searcher.css';
 
 function SearchResult({ tvShow, onClick }) {
-	const media = (
-		<MediaImage 
-			path={tvShow.backdropImagePath} 
-			type="backdrop"
-			sizes="14vw"
-			alt={tvShow.name}
-		/>
-	);
-
 	return (
-		<Link to={`/tvshow/${tvShow.id}`} onClick={onClick}>
-			<MiniCard
-				className="searcher__result"
-				media={media}
-				title={tvShow.name} 
-			/>
+		<Link 
+			className="searcher__result" 
+			to={`/tvshow/${tvShow.id}`} 
+			onClick={onClick}
+		>
+			<MiniCard>
+				<MiniCard.Media>
+					<MediaImage 
+						path={tvShow.backdropImagePath} 
+						type="backdrop"
+						sizes="14vw"
+						alt={tvShow.name}
+					/>
+				</MiniCard.Media>
+				<MiniCard.Title noMultiline>{tvShow.name}</MiniCard.Title>
+			</MiniCard>
 		</Link>
 	);
 }
