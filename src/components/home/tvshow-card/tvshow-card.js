@@ -24,6 +24,7 @@ export default function TvShowCard({ tvShow = {} }) {
 					className="tvshow-card__poster-image" 
 					path={backdropImagePath} 
 					type="backdrop" 
+					sizes="38vw"
 					alt={name}
 				/>
 			</div>

@@ -21,6 +21,7 @@ export default function EpisodeCard({ episode }) {
 			<MediaImage 
 				path={imagePath}
 				type="still"
+				sizes="30vw"
 				className="episode-card__media"
 				alt={name}
 			/>

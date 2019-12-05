@@ -11,7 +11,8 @@ function SearchResult({ tvShow, onClick }) {
 	const media = (
 		<MediaImage 
 			path={tvShow.backdropImagePath} 
-			type="backdrop" 
+			type="backdrop"
+			sizes="14vw"
 			alt={tvShow.name}
 		/>
 	);

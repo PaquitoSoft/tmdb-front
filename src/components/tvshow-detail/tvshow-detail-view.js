@@ -22,7 +22,8 @@ function CharacterMiniCard({ character }) {
 	const media = (
 		<MediaImage 
 			path={imagePath} 
-			type="profile" 
+			type="profile"
+			sizes="14vw"
 			alt={actorName}
 		/>
 	);
@@ -47,7 +48,8 @@ function SeasonMiniCard({ season, tvShowId }) {
 	const media = (
 		<MediaImage 
 			path={posterPath} 
-			type="poster" 
+			type="poster"
+			sizes="14vw"
 			alt={`Season ${seasonNumber}`}
 		/>
 	);
@@ -156,6 +158,7 @@ export default function TvShowDetailView() {
 						className="tvshow-detail__poster" 
 						path={posterPath} 
 						type="poster" 
+						sizes="41vw"
 						alt={name}
 					/>
 				</section>
