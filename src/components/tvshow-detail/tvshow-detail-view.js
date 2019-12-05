@@ -26,6 +26,7 @@ function CharacterMiniCard({ character }) {
 					path={imagePath} 
 					type="profile"
 					sizes="14vw"
+					ratio={0.62}
 					alt={actorName}
 				/>
 			</MiniCard.Media>
@@ -54,6 +55,7 @@ function SeasonMiniCard({ season, tvShowId }) {
 						path={posterPath} 
 						type="poster"
 						sizes="14vw"
+						ratio={0.59}
 						alt={`Season ${seasonNumber}`}
 					/>
 				</MiniCard.Media>
@@ -159,6 +161,7 @@ export default function TvShowDetailView() {
 						path={posterPath} 
 						type="poster" 
 						sizes="41vw"
+						ratio={0.68}
 						alt={name}
 					/>
 				</section>

@@ -6,17 +6,26 @@ import { useAppContext } from '../../app-context/app-context';
 	from the total available
 	(https://web.dev/use-srcset-to-automatically-choose-the-right-image/#what-about-the-display-size-of-the-image)
 */
-export default function MediaImage({ path, type = 'poster', sizes = '', className = '', ...rest }) {
+export default function MediaImage({ 
+	path, 
+	type = 'poster', 
+	sizes = '', 
+	ratio,
+	className = '', 
+	...rest 
+}) {
 	const { imagesConfig } = useAppContext();
 	const $img = useRef(null);
 	const configSizes = imagesConfig[`${type}Sizes`].filter(size => /^w/.test(size));
 	
 	useEffect(() => {
 		if (!path) {
-			const { clientHeight, clientWidth } = $img.current;
+			let { clientHeight, clientWidth } = $img.current;
+			if (ratio) clientHeight = Math.trunc(clientWidth / ratio);
 			$img.current.src = `https://picsum.photos/id/1025/${clientWidth}/${clientHeight}?grayscale`;;
 		}
-	}, [path]);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	if (path) {
 		rest.srcSet = configSizes.map(size => (

@@ -20,6 +20,7 @@ function SearchResult({ tvShow, onClick }) {
 						path={tvShow.backdropImagePath} 
 						type="backdrop"
 						sizes="14vw"
+						ratio={1.71}
 						alt={tvShow.name}
 					/>
 				</MiniCard.Media>
