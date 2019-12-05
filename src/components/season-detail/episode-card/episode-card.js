@@ -4,6 +4,8 @@ import './episode-card.css';
 import RatingIcon from '../../shared/rating-icon/rating-icon';
 import MediaImage from '../../shared/media-image/media-image';
 
+const NOW = Date.now();
+
 export default function EpisodeCard({ episode }) {
 	const {
 		name,
@@ -14,7 +16,7 @@ export default function EpisodeCard({ episode }) {
 		overview
 	} = episode;
 	const isOverviewAvailable = overview.trim().length > 0;
-	const isYetToBeAired = (new Date(airDate)).getTime() > Date.now();
+	const isYetToBeAired = (new Date(airDate)).getTime() > NOW;
 	const [isOverviewVisible, toggleOverviewVisibility] = useState(false);
 	
 	return (
@@ -55,6 +57,7 @@ export default function EpisodeCard({ episode }) {
 					onClick={() => toggleOverviewVisibility(false)}
 				>
 					<div className="episode-card__overview-content">
+						<h4 className="episode-card__overview-title">{name}</h4>
 						{overview}
 					</div>
 				</div>
