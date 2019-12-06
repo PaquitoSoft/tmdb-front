@@ -8,6 +8,13 @@
 	--color-golf: #acb2b7;
 }
 
+[data-thememode="dark"] {
+	--color-alfa: #ffffff;
+	--color-charlie: #ffffff;
+	--color-bravo: #ffffff;	
+	--color-foxtrot: #000000;
+}
+
 a {
 	text-decoration: none;
 	color: var(--color-bravo);

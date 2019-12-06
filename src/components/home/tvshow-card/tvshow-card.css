@@ -49,3 +49,11 @@
 .tvshow-card__poster-image {
 	width: 100%;
 }
+
+[data-thememode="dark"] .tvshow-card {
+	box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+[data-thememode="dark"] .tvshow-card:hover {
+	box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2), 0 0 20px 0 rgba(255, 255, 255, 0.19);
+}

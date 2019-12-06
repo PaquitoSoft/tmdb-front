@@ -1,3 +1,4 @@
 .favorite-icon {
 	cursor: pointer;
+	fill: var(--color-bravo);
 }

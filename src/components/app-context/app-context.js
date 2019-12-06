@@ -1,21 +1,38 @@
 import React, { useContext, useState } from 'react';
 
+export const THEME_MODES = {
+	LIGHT: 'light',
+	DARK: 'dark'
+}
+
+const STORAGE_THEME_MODE_KEY = 'tmk';
+
 const AppContext = React.createContext({
 	apiClient: undefined,
 	userId: undefined,
 	imagesConfig: {},
 	error: null,
-	setError: () => false
+	setError: () => false,
+	themeMode: undefined,
+	toggleThemeMode: () => false
 });
 
 export function AppProvider({ apiClient, userId, imagesConfig, children } ) {
 	const [error, setError] = useState(null);
+	const initialThemeMode = localStorage.getItem(STORAGE_THEME_MODE_KEY) || THEME_MODES.LIGHT;
+	const [themeMode, setThemeMode] = useState(initialThemeMode);
 	const providerInitialValue = {
 		apiClient, 
 		userId, 
 		imagesConfig, 
 		error, 
-		setError
+		setError,
+		themeMode: initialThemeMode,
+		toggleThemeMode: () => {
+			const newThemeMode = themeMode !== THEME_MODES.LIGHT ? THEME_MODES.LIGHT : THEME_MODES.DARK;
+			setThemeMode(newThemeMode);
+			localStorage.setItem(STORAGE_THEME_MODE_KEY, newThemeMode);
+		}
 	};
 
 	return (

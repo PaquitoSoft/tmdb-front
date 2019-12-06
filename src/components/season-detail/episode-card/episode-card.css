@@ -70,6 +70,7 @@
 	background-color: var(--color-foxtrot);
 	opacity: 0.95;
 	overflow-y: auto;
+	color: var(--color-bravo);
 }
 
 .episode-card__overview-content {
@@ -79,4 +80,8 @@
 
 .episode-card__overview-title {
 	margin: 5px 0 10px 0;
+}
+
+[data-thememode="dark"] .episode-card__overview-panel {
+	opacity: 0.85;
 }

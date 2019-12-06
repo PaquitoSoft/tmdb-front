@@ -1,3 +1,8 @@
+.layout-app {
+	background-color: var(--color-foxtrot);
+	color: var(--color-bravo);
+}
+
 .layout-app__main {
 	margin: 20px 10% 20px 10%;
 }
@@ -5,6 +10,8 @@
 .layout-app__title-container {
 	background-color: var(--color-delta);
 	padding: 15px 10% 15px 10%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .layout-app__title {
@@ -18,3 +25,6 @@
 	padding: 5px 10% 15px 10%;
 }
 
+.layout-app[data-thememode="dark"] {
+	background-color: var(--color-delta);
+}

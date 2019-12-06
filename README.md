@@ -25,5 +25,5 @@ You can test this demo site in [https://paquitosoft.github.io/tmdb-front/](https
 * Show tvshow networks
 * ~~Loader component~~
 * ~~Error display component~~
-* Dark mode
+* ~~Dark mode~~
 * I18N
