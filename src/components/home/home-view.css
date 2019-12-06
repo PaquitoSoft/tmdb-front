@@ -3,7 +3,7 @@
 }
 
 .home-view__selector-link {
-	color: #868E91;
+	color: var(--color-alfa);
 	font-size: 24px;
 	font-weight: 500px;
 	margin-right: 30px;

@@ -13,13 +13,13 @@
 	height: 100%;
 	width: 100%;
 	z-index: 20;
-	background-color: #000000;
+	background-color: var(--color-bravo);
 	opacity: 0.25;
 }
 
 .error-modal__modal {
 	position: absolute;
-	background-color: #ffffff;
+	background-color: var(--color-foxtrot);
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	padding: 25px;
 	z-index: 30;
@@ -32,8 +32,8 @@
 }
 
 .error-modal__close-button {
-	background-color: #081c24;
-	color: #ffffff;
+	background-color: var(--color-delta);
+	color: var(--color-foxtrot);
 	padding: 10px 15px 10px 15px;
 	font-size: 16px;
 	border-radius: 5px;

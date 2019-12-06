@@ -1,9 +1,8 @@
 .app-loader {
 	width: 75px;
 	height: 75px;
-	background-color: #01D277;
-	/* background-color: #081c24; */
-
+	background-color: var(--color-echo);
+	
 	margin: 100px auto;
 	-webkit-animation: sk-rotateplane 2s infinite ease-in-out;
 	animation: sk-rotateplane 2s infinite ease-in-out;

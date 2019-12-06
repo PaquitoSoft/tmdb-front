@@ -10,7 +10,7 @@
 
 .season-detail__season-date {
 	font-size: 18px;
-	color: #666666;
+	color: var(--color-charlie);
 }
 
 .season-detail__tvshow-name {

@@ -1,6 +1,6 @@
 .rating-icon {
-	background-color: #000000;
-	color: #ffffff;
+	background-color: var(--color-bravo);
+	color: var(--color-foxtrot);
 	border-radius: 5px;
 	font-size: 12px;
 	font-weight: bold;

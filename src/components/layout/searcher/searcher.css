@@ -9,13 +9,13 @@
 	border: none;
 	width: 100%;
 	outline: none;
-	border-bottom: 1px solid #868E91;
+	border-bottom: 1px solid var(--color-alfa);
 	line-height: 30px;
 }
 
 .searcher__results {
 	position: absolute;
-	background-color: #fff;
+	background-color: var(--color-foxtrot);
 	padding: 10px;
 	margin-top: 5px;
 	text-align: center;

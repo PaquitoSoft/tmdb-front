@@ -3,13 +3,13 @@
 }
 
 .layout-app__title-container {
-	background-color: #081c24;
+	background-color: var(--color-delta);
 	padding: 15px 10% 15px 10%;
 }
 
 .layout-app__title {
 	text-decoration: none;
-	color: #01D277;
+	color: var(--color-echo);
 	font-size: 32px;
 	font-weight: 600;
 }
