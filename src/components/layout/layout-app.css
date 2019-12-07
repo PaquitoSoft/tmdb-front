@@ -4,7 +4,8 @@
 }
 
 .layout-app__main {
-	margin: 20px 10% 20px 10%;
+	margin: 20px 10% 0 10%;
+	min-height: 900px;
 }
 
 .layout-app__title-container {
