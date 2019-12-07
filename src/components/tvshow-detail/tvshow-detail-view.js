@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { useAppContext } from '../app-context/app-context';
-import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
 
-import Loader from '../shared/loader/loader';
 import MediaImage from '../shared/media-image/media-image';
 import MiniCard from '../shared/mini-card/mini-card';
 import RatingIcon from '../shared/rating-icon/rating-icon';
@@ -106,20 +104,11 @@ const UNSET_FAVORITE_TVSHOW_MUTATION = `
 `;
 
 
-export default function TvShowDetailView() {
+export default function TvShowDetailView({ data }) {
 	const { tvShowId } = useParams();
 	const { apiClient } = useAppContext();
 	const [tvShow, setTvShow] = useState();
-	const {
-		isFetching,
-		data
-	} = useDataFetching({
-		query: VIEW_DATA_QUERY,
-		params: { 
-			tvShowId: parseInt(tvShowId, 0)
-		}
-	});
-
+	
 	const saveFavorite = ({ tvShow, isFavorite }) => {
 		apiClient.query({ 
 			query: isFavorite ? UNSET_FAVORITE_TVSHOW_MUTATION : SET_FAVORITE_TVSHOW_MUTATION, 
@@ -135,9 +124,6 @@ export default function TvShowDetailView() {
 			console.error(`Error setting favorite value for TvShow ${tvShowId}`);
 		});
 	}
-	
-	if (isFetching) return <Loader />;
-	if (!data) return null;
 	
 	const _tvShow = tvShow || data.getTvShowDetails;
 	const {
@@ -212,3 +198,12 @@ export default function TvShowDetailView() {
 		</section>
 	)
 }
+
+TvShowDetailView.buildDataFetchRequestData = ({ 
+	urlParams: { tvShowId } 
+}) => ({
+	query: VIEW_DATA_QUERY,
+	params: { 
+		tvShowId: parseInt(tvShowId, 0)
+	}
+});

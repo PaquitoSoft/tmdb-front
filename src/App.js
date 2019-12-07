@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import buildLazyView from './plugins/lazy-view-builder';
+
 import { AppProvider } from './components/app-context/app-context';
 import Layout from './components/layout/layout-app';
 import Loader from './components/shared/loader/loader';
@@ -8,9 +10,9 @@ import ScrollToTop from './components/shared/scroll-to-top/scroll-to-top';
 
 import './App.css';
 
-const HomeView = lazy(() => import('./components/home/home-view'));
-const TvShowDetailView = lazy(() => import('./components/tvshow-detail/tvshow-detail-view'));
-const SeasonDetailView = lazy(() => import('./components/season-detail/season-detail-view'));
+const HomeView = buildLazyView(() => import('./components/home/home-view'));
+const TvShowDetailView = buildLazyView(() => import('./components/tvshow-detail/tvshow-detail-view'));
+const SeasonDetailView = buildLazyView(() => import('./components/season-detail/season-detail-view'));
 
 let basename = '/';
 if (process.env.NODE_ENV === 'production') {

@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-
-import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
-import Loader from '../shared/loader/loader';
+import { Link } from 'react-router-dom';
 
 import EpisodeCard from './episode-card/episode-card';
 
@@ -31,22 +28,7 @@ const viewDataQuery = `
 	}
 `;
 
-export default function SeasonDetailView() {
-	const { tvShowId, seasonNumber } = useParams();
-	const {
-		isFetching,
-		data
-	} = useDataFetching({
-		query: viewDataQuery,
-		params: { 
-			tvShowId: parseInt(tvShowId, 0), 
-			seasonNumber: parseInt(seasonNumber, 0)
-		}
-	});
-	
-	if (isFetching) return <Loader />;
-	if (!data) return null;
-	
+export default function SeasonDetailView({ data }) {
 	const {
 		name,
 		airDate,
@@ -74,3 +56,13 @@ export default function SeasonDetailView() {
 		</section>
 	)
 }
+
+SeasonDetailView.buildDataFetchRequestData = ({ 
+	urlParams: { tvShowId, seasonNumber} 
+}) => ({
+	query: viewDataQuery,
+	params: { 
+		tvShowId: parseInt(tvShowId, 0), 
+		seasonNumber: parseInt(seasonNumber, 0)
+	}
+});

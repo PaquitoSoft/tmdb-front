@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import useQueryString from '../shared/use-query-string/use-query-string';
-import useDataFetching from '../shared/use-data-fetching/use-data-fetching';
-
-import Loader from '../shared/loader/loader';
 import TvShowCard from './tvshow-card/tvshow-card';
 
 import './home-view.css';
@@ -36,24 +32,10 @@ const VIEW_DATA_QUERY = `
 	}
 `;
 
-export default function HomeView() {
-	const qs = useQueryString();
-	const selectedFilter = qs.get('filter') || FILTER_CODE_POPULAR;
-	
-	const {
-		isFetching,
-		data
-	} = useDataFetching({
-		query: VIEW_DATA_QUERY,
-		params: { 
-			type: selectedFilter
-		}
-	});
-
-	if (isFetching) return <Loader />;
-	if (!data) return null;
-
+export default function HomeView({ data, urlQueryString }) {
+	const selectedFilter = urlQueryString.get('filter') || FILTER_CODE_POPULAR;
 	const tvShows = data.getByType;
+
 	return (
 		<section className="home-view">
 			<div className="home-view__type-selector">
@@ -66,3 +48,10 @@ export default function HomeView() {
 		</section>
 	);
 }
+
+HomeView.buildDataFetchRequestData = ({ urlQueryString }) => ({
+	query: VIEW_DATA_QUERY,
+	params: { 
+		type: urlQueryString.get('filter') || FILTER_CODE_POPULAR
+	}
+});

@@ -19,10 +19,9 @@ You can test this demo site in [https://paquitosoft.github.io/tmdb-front/](https
 
 
 # TODO
-* Move data fetching to the routing mechanism
+* ~~Move data fetching to the routing mechanism~~
 * ~~Check image size for search results with no poster image~~
 * ~~Show episodes yet to be aired~~
-* Show tvshow networks
 * ~~Loader component~~
 * ~~Error display component~~
 * ~~Dark mode~~
