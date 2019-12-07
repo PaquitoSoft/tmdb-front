@@ -1,69 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { useAppContext } from '../app-context/app-context';
 
 import MediaImage from '../shared/media-image/media-image';
-import MiniCard from '../shared/mini-card/mini-card';
 import RatingIcon from '../shared/rating-icon/rating-icon';
 import FavoriteIcon from '../shared/favorite-icon/favorite-icon';
+import CharacterMiniCard from './character-mini-card/character-mini-card';
+import SeasonMiniCard from './season-mini-card/season-mini-card';
 
 import './tvshow-detail-view.css';
-
-function CharacterMiniCard({ character }) {
-	const {
-		imagePath,
-		name,
-		actorName
-	} = character;
-
-	return (
-		<MiniCard className="tvshow-detail__character-card">
-			<MiniCard.Media>
-				<MediaImage 
-					path={imagePath} 
-					type="profile"
-					sizes="14vw"
-					ratio={0.62}
-					alt={actorName}
-				/>
-			</MiniCard.Media>
-			<MiniCard.Title>{actorName}</MiniCard.Title>
-			<MiniCard.Subtitle>{name}</MiniCard.Subtitle>
-		</MiniCard>
-	);
-}
-
-function SeasonMiniCard({ season, tvShowId }) {
-	const {
-		posterPath,
-		seasonNumber,
-		airDate,
-		episodesCount
-	} = season;
-
-	return (
-		<Link 
-			className="tvshow-detail__season-card"
-			to={`/tvshow/${tvShowId}/season/${seasonNumber}`}
-		>
-			<MiniCard>
-				<MiniCard.Media>
-					<MediaImage 
-						path={posterPath} 
-						type="poster"
-						sizes="14vw"
-						ratio={0.59}
-						alt={`Season ${seasonNumber}`}
-					/>
-				</MiniCard.Media>
-				<MiniCard.Title>{`Season ${seasonNumber}`}</MiniCard.Title>
-				<MiniCard.Subtitle>{`(${airDate})`}</MiniCard.Subtitle>
-				<MiniCard.Subtitle>{`${episodesCount} Episodes`}</MiniCard.Subtitle>
-			</MiniCard>
-		</Link>
-	);
-}
 
 const VIEW_DATA_QUERY = `
 	query TvShowDetails($tvShowId: Int!) {
@@ -107,7 +53,7 @@ const UNSET_FAVORITE_TVSHOW_MUTATION = `
 export default function TvShowDetailView({ data }) {
 	const { tvShowId } = useParams();
 	const { apiClient } = useAppContext();
-	const [tvShow, setTvShow] = useState();
+	const [tvShow, setTvShow] = useState(data.getTvShowDetails);
 	
 	const saveFavorite = ({ tvShow, isFavorite }) => {
 		apiClient.query({ 
@@ -125,7 +71,6 @@ export default function TvShowDetailView({ data }) {
 		});
 	}
 	
-	const _tvShow = tvShow || data.getTvShowDetails;
 	const {
 		id,
 		name,
@@ -136,7 +81,7 @@ export default function TvShowDetailView({ data }) {
 		isFavorite,
 		seasons = [],
 		cast = []
-	} = _tvShow;
+	} = tvShow;
 
 	return (
 		<section className="tvshow-detail">
@@ -166,7 +111,7 @@ export default function TvShowDetailView({ data }) {
 						<FavoriteIcon 
 							isActive={isFavorite} 
 							onClick={() => {
-								saveFavorite({ isFavorite, tvShow: _tvShow });
+								saveFavorite({ isFavorite, tvShow });
 							}}
 						/>
 					</div>
