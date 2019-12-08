@@ -1,0 +1,117 @@
+{
+	"getTvShowDetails": {
+		"id": 1412,
+		"name": "Arrow",
+		"posterPath": "/gKG5QGz5Ngf8fgWpBsWtlg5L2SF.jpg",
+		"firstAirDate": "2012-10-10",
+		"overview": "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.",
+		"votesAverage": 5.8,
+		"isFavorite": false,
+		"seasons": [
+			{
+				"seasonNumber": 1,
+				"posterPath": "/AlzF0mWXN1ORPUVYAHHRan2j7ji.jpg",
+				"airDate": "2012-10-10",
+				"episodesCount": 23
+			},
+			{
+				"seasonNumber": 2,
+				"posterPath": "/e6v6RUzAW7xO6OBeLtfOhlCawz6.jpg",
+				"airDate": "2013-10-09",
+				"episodesCount": 23
+			},
+			{
+				"seasonNumber": 3,
+				"posterPath": "/hiyzwzv9PZBIhHyGX0cxUDelYWk.jpg",
+				"airDate": "2014-10-08",
+				"episodesCount": 23
+			},
+			{
+				"seasonNumber": 4,
+				"posterPath": "/jgP3f5jWZFW4pPryf4IfWqVepEp.jpg",
+				"airDate": "2015-10-07",
+				"episodesCount": 23
+			},
+			{
+				"seasonNumber": 5,
+				"posterPath": "/uzGRZtaDTh0nKruS0raXVZnGQAj.jpg",
+				"airDate": "2016-10-05",
+				"episodesCount": 23
+			},
+			{
+				"seasonNumber": 6,
+				"posterPath": "/AdPdssJG1d2IPIXqBxTxxwvrfRL.jpg",
+				"airDate": "2017-10-12",
+				"episodesCount": 23
+			},
+			{
+				"seasonNumber": 7,
+				"posterPath": "/740MYj8CXHWZHPIOOuiMljGqYFV.jpg",
+				"airDate": "2018-10-15",
+				"episodesCount": 22
+			},
+			{
+				"seasonNumber": 8,
+				"posterPath": "/gKG5QGz5Ngf8fgWpBsWtlg5L2SF.jpg",
+				"airDate": "2019-10-15",
+				"episodesCount": 10
+			}
+		],
+		"cast": [
+			{
+				"id": 76110,
+				"imagePath": "/kTe4RYfqFze7N6HX1HEnNfHBZ2w.jpg",
+				"name": "Oliver Queen",
+				"actorName": "Stephen Amell"
+			},
+			{
+				"id": 116774,
+				"imagePath": "/bZWO7WfBYI8iojTFozzqN2X3RWL.jpg",
+				"name": "John Diggle / Spartan",
+				"actorName": "David Ramsey"
+			},
+			{
+				"id": 55775,
+				"imagePath": "/lRhzzdmt29n8PDi63QX5MLPAUFz.jpg",
+				"name": "Laurel Lance / Black Canary",
+				"actorName": "Katie Cassidy"
+			},
+			{
+				"id": 53184,
+				"imagePath": "/kOvmhXFdj8fH7Q1WgMc53peBkv4.jpg",
+				"name": "Rene Ramirez / Wild Dog",
+				"actorName": "Rick Gonzalez"
+			},
+			{
+				"id": 576474,
+				"imagePath": "/6AyzuqtaPKG8kyiFTdjQ21kXY1b.jpg",
+				"name": "Dinah Drake / Black Canary",
+				"actorName": "Juliana Harkavy"
+			},
+			{
+				"id": 33702,
+				"imagePath": "/4vRrNkaht7Sklg5XJAUPMciUHOU.jpg",
+				"name": "William \"Will\" Clayton",
+				"actorName": "Ben Lewis"
+			},
+			{
+				"id": 968006,
+				"imagePath": "/9kBsMW17rUk9O5BrBONCQUtSi7B.jpg",
+				"name": "Mia Smoak / Blackstar",
+				"actorName": "Katherine McNamara"
+			},
+			{
+				"id": 1581190,
+				"imagePath": "/VXgR1NWyLITIS0TEocGFiesfaz.jpg",
+				"name": "Connor Hawke",
+				"actorName": "Joseph David-Jones"
+			},
+			{
+				"id": 1094385,
+				"imagePath": "/1v6DB2sqJYAuzOBD0ngSwuIBl1z.jpg",
+				"name": "Mar Novu / The Monitor",
+				"actorName": "LaMonica Garrett"
+			}
+		]
+	}
+}

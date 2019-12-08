@@ -1,14 +1,9 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
-// import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
-
+import { shallow, mount } from 'enzyme';
 import { AppProvider } from './components/app-context/app-context';
 
 const userIdMock = 'hskfjahshjdjskla';
-const apiClientMock = {
-	query: jest.fn()
-};
+
 const imagesConfigMock = {
 	"baseUrl":"https://image.tmdb.org/t/p/",
 	"backdropSizes":["w300","w780","w1280","original"],
@@ -18,61 +13,61 @@ const imagesConfigMock = {
 	"stillSizes":["w92","w185","w300","original"]
 };
 
-jest.mock('react-router-dom', () => ({
-	MemoryRouter: ({ children }) => (<div>{children}</div>),
-	useParams: () => ({})
-}));
+const renderers = {
+	'shallow': shallow,
+	'mount': mount
+};
 
-function AppContextMock({ children }) {
+function AppContextMock({ children, apiClientMock }) {
 	return (
 		<AppProvider 
 			apiClient={apiClientMock} 
 			userId={userIdMock} 
 			imagesConfig={imagesConfigMock}
 		>
-			<MemoryRouter>
-				{children}
-			</MemoryRouter>
+			{children}
 		</AppProvider>
 	);
 }
 
-export const getAppContextMock = () => AppContextMock;
+export function render(
+	component, 
+	options = { renderType: 'shallow' }
+) {
+	return renderers[options.renderType](component);
+}
 
 export function validateSnapshot(
 	component, 
 	options = { renderType: 'shallow' }
 ) {
-	const wrapper = shallow(component);
+	const wrapper = render(component, options);
 	expect(wrapper).toMatchSnapshot();
-	// const tree = renderer.create(component).toJSON();
-	// expect(tree).toMatchSnapshot();
+	return wrapper;
 }
 
-export function validateSnapshotInAppContext(
-	Component,
-	props = {}, 
-	options = { renderType: 'shallow' }
-) {
-	// jest.spyOn(ReactRouter, 'useParams')
-	// 	.mockImplementation(() => {
-	// 		console.log('------------ mock useParams -------------');
-	// 		return {};
-	// 	});
-	
-	const appWrapper = shallow(
-		<AppContextMock>
-			<Component {...props} />
-		</AppContextMock>
-	);
-	// console.log(appWrapper.debug());
-	const componentWrapper = appWrapper.find(Component);
-	// console.log(componentWrapper.debug());
-	console.log(componentWrapper.dive().debug());
-}
-
-export const renderComponentInContext = (
+export function renderInAppContext(
 	component, 
-	options = { renderType: 'shallow' }
-) => shallow(<AppContextMock>{component}</AppContextMock>);
+	options = {}
+) {
+	const _options = {
+		renderType: 'mount',
+		apiClientQueryMock: jest.fn().mockImplementation(() => Promise.resolve({})),
+		...options
+	};
+
+	const apiClientMock = {
+		query: _options.apiClientQueryMock
+	};
 	
+	const wrapper = render(
+		(
+			<AppContextMock apiClientMock={apiClientMock}>
+				{component}
+			</AppContextMock>
+		),
+		_options
+	);
+
+	return wrapper.find(AppProvider).childAt(0);
+}

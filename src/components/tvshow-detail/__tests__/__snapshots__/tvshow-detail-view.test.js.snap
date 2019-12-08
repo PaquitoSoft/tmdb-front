@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShowDetailView Should render tv show detail data 1`] = `
+<section
+  className="tvshow-detail"
+>
+  <div
+    className="tvshow-detail__main-info"
+  >
+    <section
+      className="tvshow-detail__poster"
+    >
+      <MediaImage
+        alt="Arrow"
+        className="tvshow-detail__poster"
+        path="/gKG5QGz5Ngf8fgWpBsWtlg5L2SF.jpg"
+        ratio={0.68}
+        sizes="41vw"
+        type="poster"
+      />
+    </section>
+    <section
+      className="tvshow-detail__info-container"
+    >
+      <div
+        className="tvshow-detail__title"
+      >
+        <h1
+          className="tvshow-detail__name"
+        >
+          Arrow
+        </h1>
+        <span
+          className="tvshow-detail__year"
+        >
+          (
+          Wed Oct 10 2012
+          )
+        </span>
+        <RatingIcon
+          className="tvshow-detail__rating"
+          ratingValue={5.8}
+          size="big"
+        />
+      </div>
+      <div
+        className="tvshow-detail__overview-title"
+      >
+        <h2
+          className="tvshow-detail__overview-label"
+        >
+          Overview
+        </h2>
+        <FavoriteIcon
+          isActive={false}
+          onClick={[Function]}
+        />
+      </div>
+      <p
+        className="tvshow-detail__overview-description"
+      >
+        Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.
+      </p>
+    </section>
+  </div>
+  <hr
+    className="tvshow-detail__separator"
+  />
+  <section
+    className="tvshow-detail__cast"
+  >
+    <h2
+      className="tvshow-detail__cast-title"
+    >
+      Tv Show Cast
+    </h2>
+    <div
+      className="tvshow-detail__characters"
+    >
+      <CharacterMiniCard
+        character={
+          Object {
+            "actorName": "Stephen Amell",
+            "id": 76110,
+            "imagePath": "/kTe4RYfqFze7N6HX1HEnNfHBZ2w.jpg",
+            "name": "Oliver Queen",
+          }
+        }
+        key="76110"
+      />
+      <CharacterMiniCard
+        character={
+          Object {
+            "actorName": "David Ramsey",
+            "id": 116774,
+            "imagePath": "/bZWO7WfBYI8iojTFozzqN2X3RWL.jpg",
+            "name": "John Diggle / Spartan",
+          }
+        }
+        key="116774"
+      />
+      <CharacterMiniCard
+        character={
+          Object {
+            "actorName": "Katie Cassidy",
+            "id": 55775,
+            "imagePath": "/lRhzzdmt29n8PDi63QX5MLPAUFz.jpg",
+            "name": "Laurel Lance / Black Canary",
+          }
+        }
+        key="55775"
+      />
+      <CharacterMiniCard
+        character={
+          Object {
+            "actorName": "Rick Gonzalez",
+            "id": 53184,
+            "imagePath": "/kOvmhXFdj8fH7Q1WgMc53peBkv4.jpg",
+            "name": "Rene Ramirez / Wild Dog",
+          }
+        }
+        key="53184"
+      />
+      <CharacterMiniCard
+        character={
+          Object {
+            "actorName": "Juliana Harkavy",
+            "id": 576474,
+            "imagePath": "/6AyzuqtaPKG8kyiFTdjQ21kXY1b.jpg",
+            "name": "Dinah Drake / Black Canary",
+          }
+        }
+        key="576474"
+      />
+      <CharacterMiniCard
+        character={
+          Object {
+            "actorName": "Ben Lewis",
+            "id": 33702,
+            "imagePath": "/4vRrNkaht7Sklg5XJAUPMciUHOU.jpg",
+            "name": "William \\"Will\\" Clayton",
+          }
+        }
+        key="33702"
+      />
+      <CharacterMiniCard
+        character={
+          Object {
+            "actorName": "Katherine McNamara",
+            "id": 968006,
+            "imagePath": "/9kBsMW17rUk9O5BrBONCQUtSi7B.jpg",
+            "name": "Mia Smoak / Blackstar",
+          }
+        }
+        key="968006"
+      />
+      <CharacterMiniCard
+        character={
+          Object {
+            "actorName": "Joseph David-Jones",
+            "id": 1581190,
+            "imagePath": "/VXgR1NWyLITIS0TEocGFiesfaz.jpg",
+            "name": "Connor Hawke",
+          }
+        }
+        key="1581190"
+      />
+      <CharacterMiniCard
+        character={
+          Object {
+            "actorName": "LaMonica Garrett",
+            "id": 1094385,
+            "imagePath": "/1v6DB2sqJYAuzOBD0ngSwuIBl1z.jpg",
+            "name": "Mar Novu / The Monitor",
+          }
+        }
+        key="1094385"
+      />
+    </div>
+  </section>
+  <hr
+    className="tvshow-detail__separator"
+  />
+  <section
+    className="tvshow-detail__seasons-container"
+  >
+    <h2
+      className="tvshow-detail__seasons-title"
+    >
+      Seasons
+    </h2>
+    <div
+      className="tvshow-detail__seasons-list"
+    >
+      <SeasonMiniCard
+        key="1"
+        season={
+          Object {
+            "airDate": "2012-10-10",
+            "episodesCount": 23,
+            "posterPath": "/AlzF0mWXN1ORPUVYAHHRan2j7ji.jpg",
+            "seasonNumber": 1,
+          }
+        }
+        tvShowId={1412}
+      />
+      <SeasonMiniCard
+        key="2"
+        season={
+          Object {
+            "airDate": "2013-10-09",
+            "episodesCount": 23,
+            "posterPath": "/e6v6RUzAW7xO6OBeLtfOhlCawz6.jpg",
+            "seasonNumber": 2,
+          }
+        }
+        tvShowId={1412}
+      />
+      <SeasonMiniCard
+        key="3"
+        season={
+          Object {
+            "airDate": "2014-10-08",
+            "episodesCount": 23,
+            "posterPath": "/hiyzwzv9PZBIhHyGX0cxUDelYWk.jpg",
+            "seasonNumber": 3,
+          }
+        }
+        tvShowId={1412}
+      />
+      <SeasonMiniCard
+        key="4"
+        season={
+          Object {
+            "airDate": "2015-10-07",
+            "episodesCount": 23,
+            "posterPath": "/jgP3f5jWZFW4pPryf4IfWqVepEp.jpg",
+            "seasonNumber": 4,
+          }
+        }
+        tvShowId={1412}
+      />
+      <SeasonMiniCard
+        key="5"
+        season={
+          Object {
+            "airDate": "2016-10-05",
+            "episodesCount": 23,
+            "posterPath": "/uzGRZtaDTh0nKruS0raXVZnGQAj.jpg",
+            "seasonNumber": 5,
+          }
+        }
+        tvShowId={1412}
+      />
+      <SeasonMiniCard
+        key="6"
+        season={
+          Object {
+            "airDate": "2017-10-12",
+            "episodesCount": 23,
+            "posterPath": "/AdPdssJG1d2IPIXqBxTxxwvrfRL.jpg",
+            "seasonNumber": 6,
+          }
+        }
+        tvShowId={1412}
+      />
+      <SeasonMiniCard
+        key="7"
+        season={
+          Object {
+            "airDate": "2018-10-15",
+            "episodesCount": 22,
+            "posterPath": "/740MYj8CXHWZHPIOOuiMljGqYFV.jpg",
+            "seasonNumber": 7,
+          }
+        }
+        tvShowId={1412}
+      />
+      <SeasonMiniCard
+        key="8"
+        season={
+          Object {
+            "airDate": "2019-10-15",
+            "episodesCount": 10,
+            "posterPath": "/gKG5QGz5Ngf8fgWpBsWtlg5L2SF.jpg",
+            "seasonNumber": 8,
+          }
+        }
+        tvShowId={1412}
+      />
+    </div>
+  </section>
+</section>
+`;
