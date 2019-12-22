@@ -9,3 +9,5 @@
 
 ## Notes
 * When the server returns an error, the client expose an array (even if there's only one) where every item is an object with a **message** and **stack** attributes. The **stack** is actually the _raw_ **Response** object you have to parse if you need the **extensions** information of the error.
+
+![fetchql-app-sizes](./fetchql-app-sizes.png)
