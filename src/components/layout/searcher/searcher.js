@@ -50,7 +50,7 @@ export default function Searcher() {
 		event.preventDefault();
 
 		if (searchTerm) {
-			apiClient.query({ 
+			apiClient.sendQuery({ 
 				query: SEARCH_QUERY,
 				variables: { searchTerm } 
 			})

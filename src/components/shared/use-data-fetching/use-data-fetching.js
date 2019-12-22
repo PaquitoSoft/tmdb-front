@@ -12,7 +12,7 @@ export default function useDataFetching({
 	useEffect(() => {
 		let ignore = false;
 		setIsFetching(true);
-		apiClient.query({ query, variables: params })
+		apiClient.sendQuery({ query, variables: params })
 		.then(result => {
 			if (ignore) return null;
 
