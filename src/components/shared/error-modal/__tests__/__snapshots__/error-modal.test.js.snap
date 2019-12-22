@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorModal Should render error modal 1`] = `
+<div
+  className="error-modal"
+>
+  <div
+    className="error-modal__veil"
+  />
+  <div
+    className="error-modal__modal"
+  >
+    <div
+      className="error-modal__head"
+    />
+    <div
+      className="error-modal__content"
+    >
+      <p>
+        Ouch! It has been a totally unexpected error. Please try again in a minute.
+      </p>
+    </div>
+    <div
+      className="error-modal__footer"
+    >
+      <button
+        className="error-modal__close-button"
+        onClick={[Function]}
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`;

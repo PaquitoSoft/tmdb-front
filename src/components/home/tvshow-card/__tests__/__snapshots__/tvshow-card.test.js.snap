@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShowCard Should render TvShow Card 1`] = `
+<Link
+  className="tvshow-card"
+  to="/tvshow/68507"
+>
+  <div
+    className="tvshow-card__poster"
+  >
+    <MediaImage
+      alt="His Dark Materials"
+      className="tvshow-card__poster-image"
+      path="/9yKCJTOh9m3Lol2RY3kw99QPH6x.jpg"
+      sizes="38vw"
+      type="backdrop"
+    />
+  </div>
+  <div
+    className="tvshow-card__footer"
+  >
+    <RatingIcon
+      className="tvshow-cart__rating"
+      ratingValue={7.5}
+      size="big"
+    />
+    <div
+      className="tvshow-card__info"
+    >
+      <span
+        className="tvshow-card__title"
+      >
+        His Dark Materials
+      </span>
+      <span
+        className="tvshow-card__date"
+      >
+        Sun Nov 03 2019
+      </span>
+    </div>
+    <FavoriteIcon
+      className="tvshow-card__favorite-icon"
+      isActive={false}
+    />
+  </div>
+</Link>
+`;

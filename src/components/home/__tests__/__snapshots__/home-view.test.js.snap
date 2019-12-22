@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShowDetailView Should render Popular tv shows list when URL has no filter 1`] = `
+<section
+  className="home-view"
+>
+  <div
+    className="home-view__type-selector"
+  >
+    <FilterLink
+      filterCode="popular"
+      selectedFilter="popular"
+    />
+    <FilterLink
+      filterCode="top_rated"
+      selectedFilter="popular"
+    />
+  </div>
+  <div
+    className="home-view__grid"
+  >
+    <TvShowCard
+      key="82856"
+      tvShow={
+        Object {
+          "backdropImagePath": "/o7qi2v4uWQ8bZ1tW3KI0Ztn2epk.jpg",
+          "firstAirDate": "2019-11-12",
+          "id": 82856,
+          "isFavorite": false,
+          "name": "The Mandalorian",
+          "posterPath": "/BbNvKCuEF4SRzFXR16aK6ISFtR.jpg",
+          "votesAverage": 7.9,
+        }
+      }
+    />
+    <TvShowCard
+      key="68507"
+      tvShow={
+        Object {
+          "backdropImagePath": "/9yKCJTOh9m3Lol2RY3kw99QPH6x.jpg",
+          "firstAirDate": "2019-11-03",
+          "id": 68507,
+          "isFavorite": false,
+          "name": "His Dark Materials",
+          "posterPath": "/xOjRNnQw5hqR1EULJ2iHkGwJVA4.jpg",
+          "votesAverage": 7.5,
+        }
+      }
+    />
+    <TvShowCard
+      key="60625"
+      tvShow={
+        Object {
+          "backdropImagePath": "/mzzHr6g1yvZ05Mc7hNj3tUdy2bM.jpg",
+          "firstAirDate": "2013-12-02",
+          "id": 60625,
+          "isFavorite": false,
+          "name": "Rick and Morty",
+          "posterPath": "/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg",
+          "votesAverage": 8.6,
+        }
+      }
+    />
+  </div>
+</section>
+`;
+
+exports[`TvShowDetailView Should render Popular tv shows list when URL has that filter 1`] = `
+<section
+  className="home-view"
+>
+  <div
+    className="home-view__type-selector"
+  >
+    <FilterLink
+      filterCode="popular"
+      selectedFilter="popular"
+    />
+    <FilterLink
+      filterCode="top_rated"
+      selectedFilter="popular"
+    />
+  </div>
+  <div
+    className="home-view__grid"
+  >
+    <TvShowCard
+      key="82856"
+      tvShow={
+        Object {
+          "backdropImagePath": "/o7qi2v4uWQ8bZ1tW3KI0Ztn2epk.jpg",
+          "firstAirDate": "2019-11-12",
+          "id": 82856,
+          "isFavorite": false,
+          "name": "The Mandalorian",
+          "posterPath": "/BbNvKCuEF4SRzFXR16aK6ISFtR.jpg",
+          "votesAverage": 7.9,
+        }
+      }
+    />
+    <TvShowCard
+      key="68507"
+      tvShow={
+        Object {
+          "backdropImagePath": "/9yKCJTOh9m3Lol2RY3kw99QPH6x.jpg",
+          "firstAirDate": "2019-11-03",
+          "id": 68507,
+          "isFavorite": false,
+          "name": "His Dark Materials",
+          "posterPath": "/xOjRNnQw5hqR1EULJ2iHkGwJVA4.jpg",
+          "votesAverage": 7.5,
+        }
+      }
+    />
+    <TvShowCard
+      key="60625"
+      tvShow={
+        Object {
+          "backdropImagePath": "/mzzHr6g1yvZ05Mc7hNj3tUdy2bM.jpg",
+          "firstAirDate": "2013-12-02",
+          "id": 60625,
+          "isFavorite": false,
+          "name": "Rick and Morty",
+          "posterPath": "/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg",
+          "votesAverage": 8.6,
+        }
+      }
+    />
+  </div>
+</section>
+`;
+
+exports[`TvShowDetailView Should render Top Rated tv shows list when URL has that filter 1`] = `
+<section
+  className="home-view"
+>
+  <div
+    className="home-view__type-selector"
+  >
+    <FilterLink
+      filterCode="popular"
+      selectedFilter="top_rated"
+    />
+    <FilterLink
+      filterCode="top_rated"
+      selectedFilter="top_rated"
+    />
+  </div>
+  <div
+    className="home-view__grid"
+  >
+    <TvShowCard
+      key="100"
+      tvShow={
+        Object {
+          "backdropImagePath": "/ok1YiumqOCYzUmuTktnupOQOvV5.jpg",
+          "firstAirDate": "2004-05-10",
+          "id": 100,
+          "isFavorite": false,
+          "name": "I Am Not an Animal",
+          "posterPath": "/nMhv6jG5dtLdW7rgguYWvpbk0YN.jpg",
+          "votesAverage": 9.5,
+        }
+      }
+    />
+    <TvShowCard
+      key="87108"
+      tvShow={
+        Object {
+          "backdropImagePath": "/cDpR6URVghK5LC7G7NgPkCP8x6E.jpg",
+          "firstAirDate": "2019-05-06",
+          "id": 87108,
+          "isFavorite": false,
+          "name": "Chernobyl",
+          "posterPath": "/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
+          "votesAverage": 8.6,
+        }
+      }
+    />
+    <TvShowCard
+      key="60625"
+      tvShow={
+        Object {
+          "backdropImagePath": "/mzzHr6g1yvZ05Mc7hNj3tUdy2bM.jpg",
+          "firstAirDate": "2013-12-02",
+          "id": 60625,
+          "isFavorite": false,
+          "name": "Rick and Morty",
+          "posterPath": "/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg",
+          "votesAverage": 8.6,
+        }
+      }
+    />
+  </div>
+</section>
+`;

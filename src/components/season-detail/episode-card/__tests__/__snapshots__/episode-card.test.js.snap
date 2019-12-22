@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EpisodeCard Should render episode card 1`] = `
+<div
+  className="episode-card"
+>
+  <MediaImage
+    alt="Betrayal"
+    className="episode-card__media"
+    path="/qtvvzZz2ACzg971VifhmqY4vONb.jpg"
+    ratio={1.77}
+    sizes="30vw"
+    type="still"
+  />
+  <div
+    className="episode-card__info"
+  >
+    <div
+      className="episode-card__row"
+    >
+      <div
+        className="episode-card__title"
+      >
+        <span
+          className="episode-card__number"
+        >
+          8
+          . 
+        </span>
+        <span
+          className="episode-card__name "
+        >
+          Betrayal
+        </span>
+      </div>
+    </div>
+    <div
+      className="episode-card__row"
+    >
+      <span
+        className="episode-card__date"
+      >
+        (
+        Sun Dec 22 2019
+        )
+      </span>
+      <span
+        className="episode-card__overview-link"
+        onClick={[Function]}
+      >
+        See overview
+      </span>
+    </div>
+  </div>
+</div>
+`;

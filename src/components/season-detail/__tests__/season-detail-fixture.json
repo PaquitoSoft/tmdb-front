@@ -1,0 +1,85 @@
+{
+	"getSeasonDetails": {
+		"id": 81616,
+		"name": "Season 1",
+		"airDate": "2019-11-03",
+		"episodes": [
+			{
+				"id": 1858817,
+				"name": "Lyra's Jordan",
+				"episodeNumber": 1,
+				"imagePath": "/m2bRTb2YGzNZDCB5X4w2r6S8p8S.jpg",
+				"airDate": "2019-11-03",
+				"voteAverage": 8.5,
+				"overview": "Orphan Lyra Belacqua's world is turned upside-down by her long-absent uncle's return from the north, while the glamorous Mrs Coulter visits Jordan College with a proposition."
+			},
+			{
+				"id": 1970989,
+				"name": "The Idea of North",
+				"episodeNumber": 2,
+				"imagePath": "/21FN51Bdicgfc5fPjtXlzMOksld.jpg",
+				"airDate": "2019-11-10",
+				"voteAverage": 8.5,
+				"overview": "Lyra starts her new life in London, determined to find Roger with Mrs Coulter’s help. The Gyptians continue their search for the missing children and the elusive Gobblers."
+			},
+			{
+				"id": 1974876,
+				"name": "The Spies",
+				"episodeNumber": 3,
+				"imagePath": "/ouMUZmn6gnPQXzRfj2dCWzbNxpp.jpg",
+				"airDate": "2019-11-17",
+				"voteAverage": 7.8,
+				"overview": "From the clutches of the Gobblers, Lyra finds help from an unlikely place. It helps her put together more about her past and keep safe from Mrs Coulter and the Magisterium."
+			},
+			{
+				"id": 1974877,
+				"name": "Armour",
+				"episodeNumber": 4,
+				"imagePath": "/fLltHTyoRBBM9am4KbjN9QVxjdY.jpg",
+				"airDate": "2019-11-24",
+				"voteAverage": 8.2,
+				"overview": "Lyra and the Gyptians arrive in the North and seek the help of the Witches’ Consul, Texan aeronaut Lee Scoresby and an armoured bear in service to the town."
+			},
+			{
+				"id": 1974878,
+				"name": "The Lost Boy",
+				"episodeNumber": 5,
+				"imagePath": "/5TDYmzqlghVkftMSo88cNWaMNMh.jpg",
+				"airDate": "2019-12-01",
+				"voteAverage": 8,
+				"overview": "The alethiometer sends Lyra and Iorek on a new path, leading to a shocking but vital clue in her search to find her friend Roger and the other missing children."
+			},
+			{
+				"id": 1974879,
+				"name": "The Daemon-Cages",
+				"episodeNumber": 6,
+				"imagePath": "/6LQRq0hyXUYCiJjIgBFZPQOubY4.jpg",
+				"airDate": "2019-12-08",
+				"voteAverage": 9,
+				"overview": "Lyra discovers the horrific truth behind the Gobbler’s activities in the North. She must use all her wits to help free those around her and avoid suffering a terrible fate."
+			},
+			{
+				"id": 1974880,
+				"name": "The Fight to the Death",
+				"episodeNumber": 7,
+				"imagePath": "/hQzuDf0OwFoqyM1Q1sLz1yCArz5.jpg",
+				"airDate": "2019-12-15",
+				"voteAverage": 8.667,
+				"overview": "Separated from her friends, Lyra must use all of her methods of deception to thwart a formidable foe. Meanwhile, Mrs Coulter plots her next move."
+			},
+			{
+				"id": 1974881,
+				"name": "Betrayal",
+				"episodeNumber": 8,
+				"imagePath": "/qtvvzZz2ACzg971VifhmqY4vONb.jpg",
+				"airDate": "2019-12-22",
+				"voteAverage": 0,
+				"overview": "As the Magisterium closes in, Lyra learns more about Asriel’s rebellion. But her assistance to him comes at great personal cost."
+			}
+		]
+	},
+	"getTvShowDetails": {
+		"id": 68507,
+		"name": "His Dark Materials"
+	}
+}

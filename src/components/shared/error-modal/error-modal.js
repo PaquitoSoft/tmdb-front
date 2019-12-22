@@ -5,7 +5,7 @@ import './error-modal.css';
 
 export default function ErrorModal({ error }) {
 	const { setError } = useAppContext();
-	console.error('Unexpected error:', error);
+	console.error('App unexpected error:', error);
 
 	return (
 		<div className="error-modal">

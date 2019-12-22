@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Searcher Should render Searcher component 1`] = `
+<div
+  className="searcher"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="searcher__search-term"
+      name="searchTerm"
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Type in your search term"
+      type="text"
+      value=""
+    />
+  </form>
+</div>
+`;

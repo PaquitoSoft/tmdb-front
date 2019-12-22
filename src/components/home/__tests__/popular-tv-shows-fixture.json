@@ -1,0 +1,31 @@
+{
+	"getByType": [
+		{
+			"id": 82856,
+			"name": "The Mandalorian",
+			"backdropImagePath": "/o7qi2v4uWQ8bZ1tW3KI0Ztn2epk.jpg",
+			"posterPath": "/BbNvKCuEF4SRzFXR16aK6ISFtR.jpg",
+			"votesAverage": 7.9,
+			"isFavorite": false,
+			"firstAirDate": "2019-11-12"
+		},
+		{
+			"id": 68507,
+			"name": "His Dark Materials",
+			"backdropImagePath": "/9yKCJTOh9m3Lol2RY3kw99QPH6x.jpg",
+			"posterPath": "/xOjRNnQw5hqR1EULJ2iHkGwJVA4.jpg",
+			"votesAverage": 7.5,
+			"isFavorite": false,
+			"firstAirDate": "2019-11-03"
+		},
+		{
+			"id": 60625,
+			"name": "Rick and Morty",
+			"backdropImagePath": "/mzzHr6g1yvZ05Mc7hNj3tUdy2bM.jpg",
+			"posterPath": "/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg",
+			"votesAverage": 8.6,
+			"isFavorite": false,
+			"firstAirDate": "2013-12-02"
+		}
+	]
+}

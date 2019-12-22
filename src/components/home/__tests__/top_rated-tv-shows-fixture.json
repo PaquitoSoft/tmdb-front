@@ -1,0 +1,31 @@
+{
+	"getByType": [
+		{
+			"id": 100,
+			"name": "I Am Not an Animal",
+			"backdropImagePath": "/ok1YiumqOCYzUmuTktnupOQOvV5.jpg",
+			"posterPath": "/nMhv6jG5dtLdW7rgguYWvpbk0YN.jpg",
+			"votesAverage": 9.5,
+			"isFavorite": false,
+			"firstAirDate": "2004-05-10"
+		},
+		{
+			"id": 87108,
+			"name": "Chernobyl",
+			"backdropImagePath": "/cDpR6URVghK5LC7G7NgPkCP8x6E.jpg",
+			"posterPath": "/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
+			"votesAverage": 8.6,
+			"isFavorite": false,
+			"firstAirDate": "2019-05-06"
+		},
+		{
+			"id": 60625,
+			"name": "Rick and Morty",
+			"backdropImagePath": "/mzzHr6g1yvZ05Mc7hNj3tUdy2bM.jpg",
+			"posterPath": "/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg",
+			"votesAverage": 8.6,
+			"isFavorite": false,
+			"firstAirDate": "2013-12-02"
+		}
+	]
+}

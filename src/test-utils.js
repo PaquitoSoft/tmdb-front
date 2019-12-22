@@ -71,3 +71,5 @@ export function renderInAppContext(
 
 	return wrapper.find(AppProvider).childAt(0);
 }
+
+export const clone = object => JSON.parse(JSON.stringify(object));
