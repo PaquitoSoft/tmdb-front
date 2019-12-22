@@ -1,11 +1,11 @@
 ## Characteristics
 * Bundle size: [12.0kb](https://bundlephobia.com/result?p=lokka@1.7.0)
-** Requires **lokka-trnasport-http** which is [169.4kb](https://bundlephobia.com/result?p=lokka-transport-http@1.6.1)
+** Requires **lokka-trnasport-http** which is [169.4kb](https://bundlephobia.com/result?p=lokka-transport-http@1.6.1). This is because it includes _fetch_ polyfills both for browser and node (should be peer dependencies)
 * Usage: Create a client object using a custom Transport (HTTP is the basic)
-* Documentation: 
+* Documentation: Basic but complete. I had to dig into Transport code to learn how to disable _includeCredentials_ in fetch requests.
 * Fragments support: Yes
-* Subscriptions support: 
-* Cache: 
+* Subscriptions support: No
+* Cache: Yes. But it's a special API similar to subscriptions so clients can get updates to a query result.
 * Testing
 
 ## Notes
