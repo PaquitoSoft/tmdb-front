@@ -47,7 +47,12 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+	],
+	"coveragePathIgnorePatterns": [
+		"<rootDir>/node_modules/",
+		"<rootDir>/src/index.js",
+		"<rootDir>/src/serviceWorker.js"
+	]
   },
   "homepage": "https://paquitosoft.github.io/tmdb-front"
 }

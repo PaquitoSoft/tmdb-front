@@ -8,11 +8,32 @@ import searchResultMock from './search-results-fixture.json';
 
 describe('Searcher', () => {
 
+	function submitSearch(wrapper, searchTerm) {
+		return new Promise(resolve => {
+			wrapper
+				.find('.searcher__search-term')
+				.simulate('focus')
+				.simulate('change', {
+					target: { value: searchTerm }
+				});
+		
+			act(() => {
+				wrapper
+					.find('form')
+					.simulate('submit', {
+						preventDefault: () => true
+					});
+			});
+			
+			setTimeout(resolve, 0);
+		});
+	}
+
 	it('Should render Searcher component', () => {
 		validateSnapshot(<Searcher />);
 	});
 
-	it('Should call server when submitting a search term', () => {
+	it('Should call server and show results when submitting a search term', () => {
 		const searchTerm = 'Heroes';
 		const queryMock = jest.fn().mockImplementation(
 			() => Promise.resolve({ data: searchResultMock })
@@ -26,34 +47,35 @@ describe('Searcher', () => {
 		
 		expect(wrapper.exists('.searcher__results')).toEqual(false);
 
-		wrapper
-			.find('.searcher__search-term')
-			.simulate('focus')
-			.simulate('change', {
-				target: { value: searchTerm }
-			});
-		
-		act(() => {
-			wrapper
-				.find('form')
-				.simulate('submit', {
-					preventDefault: () => false
-				});
+		return submitSearch(wrapper, searchTerm).then(() => {
+			const { query, variables } = queryMock.mock.calls[0][0];
+			expect(query).toEqual(expect.stringContaining('searchTvShows'));
+			expect(variables.searchTerm).toEqual(searchTerm);
+			expect(wrapper.update().exists('.searcher__results')).toEqual(true);
 		});
-		
-		const { query, variables } = queryMock.mock.calls[0][0];
-		expect(query).toEqual(expect.stringContaining('searchTvShows'));
-		expect(variables.searchTerm).toEqual(searchTerm);
-		expect(wrapper.exists('.searcher__results')).toEqual(true);
-
-	});
-
-	it('Should show results panel when server returns results', () => {
-		throw new Error('Not yet implemented');
 	});
 
 	it('Should hide results panel when clicking outside Searcher component', () => {
-		throw new Error('Not yet implemented');
+		document.closest = () => false;
+		const searchTerm = 'Rick and Morty';
+		const queryMock = jest.fn().mockImplementation(
+			() => Promise.resolve({ data: searchResultMock })
+		);
+		const wrapper = renderInAppContext(
+			<div className="container"><Searcher /></div>,
+			{
+				apiClientQueryMock: queryMock
+			}
+		);
+		
+		expect(wrapper.exists('.searcher__results')).toEqual(false);
+
+		return submitSearch(wrapper, searchTerm).then(() => {
+			const fakeEvent = new MouseEvent('click', {});
+			expect(wrapper.update().exists('.searcher__results')).toEqual(true);
+			document.dispatchEvent(fakeEvent);
+			expect(wrapper.update().exists('.searcher__results')).toEqual(false);
+		});
 	});
 
 });
