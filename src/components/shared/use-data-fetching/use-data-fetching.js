@@ -8,32 +8,30 @@ export default function useDataFetching({
 	const [isFetching, setIsFetching] = useState(true);
 	const [data, setData] = useState();
 	const paramsHash = btoa(JSON.stringify(params));
-
+	
 	useEffect(() => {
 		let ignore = false;
 		setIsFetching(true);
 		apiClient.query({ query, variables: params })
-		.then(result => {
-			if (ignore) return null;
-
-			if (result.errors) {
-				setError(result.errors);
-			} else {
-				setData(result.data);
-			}
-			
-			setIsFetching(false);
-		})
-		.catch(async ([error]) => {
-			const { errors } = await error.stack.json();
-			setError(errors[0]);
-			setIsFetching(false);
-		});
-
+			.then(result => {
+				if (ignore) return null;
+				if (result.errors) {
+					setError(result.errors);
+				} else {
+					setData(result.data);
+				}
+				setIsFetching(false);
+			})
+			.catch(async ([error]) => {
+				const { errors } = await error.stack.json();
+				setError(errors[0]);
+				setIsFetching(false);
+			});
+		
 		return () => ignore = true;
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [paramsHash]);
-
+	
 	return {
 		isFetching,
 		data

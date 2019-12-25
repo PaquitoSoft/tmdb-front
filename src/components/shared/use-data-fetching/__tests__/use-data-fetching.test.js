@@ -16,6 +16,12 @@ describe('useDataFetching', () => {
 		}
 	`;
 
+	const mockServerData = { 
+		getImagesConfiguration: {
+			baseUrl: 'https://image.tmdb.org/'
+		}
+	};
+
 	const Component = ({ children, ...rest }) => children(useDataFetching(rest));
 	function renderCustomHook(hookProps, contextMockOptions) {
 		const result = {};
@@ -31,12 +37,8 @@ describe('useDataFetching', () => {
 		return result;
 	}
 
-	it('Should call the API upon mounting', (done) => {
-		const mockServerData = { 
-			getImagesConfiguration: {
-				baseUrl: 'https://image.tmdb.org/'
-			}
-		};
+	it('Should call the API upon mounting and update hook result when having the result', (done) => {
+		
 		const queryMock = jest.fn().mockImplementation(() => Promise.resolve({ data: mockServerData }));
 		const contextMock = {
 			apiClientQueryMock: queryMock
@@ -51,6 +53,24 @@ describe('useDataFetching', () => {
 			expect(hookData.data).toEqual(mockServerData);
 			done();
 		}, 0);
+	});
+
+	it('Should call AppContext setError if there is an error in the API response', (done) => {
+		const errorMock = {
+			stack: { 
+				json: () => {
+					// What a hack!!!
+					setTimeout(done, 0);
+					return Promise.resolve({ errors: [new Error('Booom!')] }) 
+				}
+			}
+		}
+		const queryMock = jest.fn(() => Promise.reject([errorMock]));
+		const contextMock = {
+			apiClientQueryMock: queryMock
+		}
+		
+		renderCustomHook({ query: mockQuery }, contextMock);
 	});
 
 });
