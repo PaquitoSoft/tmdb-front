@@ -21,15 +21,15 @@ describe('TvShowDetailView', () => {
 		const view = renderInAppContext(
 			<TvShowDetailView data={tvShowServerData} />,
 			{
-				apiClientQueryMock: mutationMock
+				apiClientMutationMock: mutationMock
 			}
 		);
 		
 		const favoriteIcon = view.find(FavoriteIcon);
 		favoriteIcon.simulate('click');
 
-		const { query, variables } = mutationMock.mock.calls[0][0];
-		expect(query).toEqual(expect.stringContaining('save'));
+		const { mutation, variables } = mutationMock.mock.calls[0][0];
+		expect(mutation).toEqual(expect.stringContaining('save'));
 		expect(variables.tvShowId).toEqual(tvShowServerData.getTvShowDetails.id);
 	});
 
@@ -40,15 +40,15 @@ describe('TvShowDetailView', () => {
 		const view = renderInAppContext(
 			<TvShowDetailView data={serverData} />,
 			{
-				apiClientQueryMock: mutationMock
+				apiClientMutationMock: mutationMock
 			}
 		);
 		
 		const favoriteIcon = view.find(FavoriteIcon);
 		favoriteIcon.simulate('click');
 
-		const { query, variables } = mutationMock.mock.calls[0][0];
-		expect(query).toEqual(expect.stringContaining('remove'));
+		const { mutation, variables } = mutationMock.mock.calls[0][0];
+		expect(mutation).toEqual(expect.stringContaining('remove'));
 		expect(variables.tvShowId).toEqual(tvShowServerData.getTvShowDetails.id);
 	});
 

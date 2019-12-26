@@ -53,11 +53,13 @@ export function renderInAppContext(
 	const _options = {
 		renderType: 'mount',
 		apiClientQueryMock: jest.fn().mockImplementation(() => Promise.resolve({})),
+		apiClientMutationMock: jest.fn().mockImplementation(() => Promise.resolve({})),
 		...options
 	};
 
 	const apiClientMock = {
-		query: _options.apiClientQueryMock
+		sendQuery: _options.apiClientQueryMock,
+		sendMutation: _options.apiClientMutationMock
 	};
 	
 	const wrapper = render(

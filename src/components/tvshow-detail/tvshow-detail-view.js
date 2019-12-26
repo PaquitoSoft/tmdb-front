@@ -56,8 +56,8 @@ export default function TvShowDetailView({ data }) {
 	const [tvShow, setTvShow] = useState(data.getTvShowDetails);
 	
 	const saveFavorite = ({ tvShow, isFavorite }) => {
-		apiClient.query({ 
-			query: isFavorite ? UNSET_FAVORITE_TVSHOW_MUTATION : SET_FAVORITE_TVSHOW_MUTATION, 
+		apiClient.sendMutation({ 
+			mutation: isFavorite ? UNSET_FAVORITE_TVSHOW_MUTATION : SET_FAVORITE_TVSHOW_MUTATION, 
 			variables: { tvShowId: tvShow.id} 
 		})
 		.then(() => {
