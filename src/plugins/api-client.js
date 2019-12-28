@@ -1,26 +1,23 @@
-import FetchQL from 'fetchql';
+import { Lokka } from 'lokka';
+import { Transport } from 'lokka-transport-http';
 
 class ApiClient {
 	constructor({ apiUrl, userId }) {
-		this.client = new FetchQL({
-			url: apiUrl, // GraphQL server address
-			interceptors: [],
-			headers: { // customized headers of all requests,
-				userToken: userId
-			},
-			onStart: function (requestQueueLength) {}, // callback of a new request queue
-			onEnd: function (requestQueueLength) {}, // callback of a request queue finished
-			omitEmptyVariables: false // remove null props(null or '') from the variables
+		this.client = new Lokka({
+			transport: new Transport(apiUrl, {
+				headers: { userToken: userId },
+				credentials: false
+			})
 		});
 	}
 
 	sendQuery({ query, variables }) {
-		console.log({ query, variables });
-		return this.client.query({ query, variables });
+		return this.client.query(query, variables)
+			.then(data => ({ data }));
 	}
 
 	sendMutation({ mutation, variables }) {
-		return this.client.query({ query: mutation, variables });
+		return this.client.mutate(mutation, variables);
 	}
 
 	createFragment(fragmentDefinition) {
