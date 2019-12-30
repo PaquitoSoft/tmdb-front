@@ -39,13 +39,13 @@ const VIEW_DATA_QUERY = `
 `;
 
 const SET_FAVORITE_TVSHOW_MUTATION = `
-	($tvShowId: Int!) {
+	mutation SaveFatoriteTvShow($tvShowId: Int!) {
 		saveFavoriteTvShow(tvShowId: $tvShowId)
 	}
 `;
 
 const UNSET_FAVORITE_TVSHOW_MUTATION = `
-	($tvShowId: Int!) {
+	mutation RemoveFavoriteTvShow($tvShowId: Int!) {
 		removeFavoriteTvShow(tvShowId: $tvShowId)
 	}
 `;

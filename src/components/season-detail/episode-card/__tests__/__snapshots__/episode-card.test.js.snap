@@ -47,6 +47,9 @@ exports[`EpisodeCard Should render episode card 1`] = `
       <span
         className="episode-card__overview-link"
         onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex="0"
       >
         See overview
       </span>

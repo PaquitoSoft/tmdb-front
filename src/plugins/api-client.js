@@ -1,23 +1,20 @@
-import { Lokka } from 'lokka';
-import { Transport } from 'lokka-transport-http';
+import { GraphQLClient } from 'graphql-request';
 
 class ApiClient {
 	constructor({ apiUrl, userId }) {
-		this.client = new Lokka({
-			transport: new Transport(apiUrl, {
-				headers: { userToken: userId },
-				credentials: false
-			})
+		this.client = new GraphQLClient(apiUrl, {
+			headers: { userToken: userId }
 		});
 	}
 
 	sendQuery({ query, variables }) {
-		return this.client.query(query, variables)
+		return this.client.request(query, variables)
 			.then(data => ({ data }));
 	}
 
 	sendMutation({ mutation, variables }) {
-		return this.client.mutate(mutation, variables);
+		return this.client.request(mutation, variables)
+			.then(data => ({ data }));
 	}
 
 	createFragment(fragmentDefinition) {
