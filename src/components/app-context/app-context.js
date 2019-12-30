@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { object, string, node } from 'prop-types';
 
 export const THEME_MODES = {
 	LIGHT: 'light',
@@ -41,6 +42,13 @@ export function AppProvider({ apiClient, userId, imagesConfig, children } ) {
 		</AppContext.Provider>
 	);
 }
+
+AppProvider.propTypes = {
+	apiClient: object.isRequired,
+	userId: string.isRequired,
+	imagesConfig: object.isRequired,
+	children: node.isRequired
+};
 
 export function useAppContext() {
 	const context = useContext(AppContext);

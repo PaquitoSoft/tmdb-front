@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { node } from 'prop-types';
 
 import { useAppContext } from '../app-context/app-context';
 import ThemeModeSwitch from './theme-mode-switch/theme-mode-switch';
@@ -8,7 +9,7 @@ import ErrorModal from '../shared/error-modal/error-modal';
 
 import './layout-app.css';
 
-export default function LayoutApp({ children }) {
+function LayoutApp({ children }) {
 	const { error, themeMode } = useAppContext();
 	
 	return (
@@ -27,3 +28,9 @@ export default function LayoutApp({ children }) {
 		</div>
 	);
 }
+
+LayoutApp.propTypes = {
+	children: node
+};
+
+export default LayoutApp;

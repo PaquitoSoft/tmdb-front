@@ -2,8 +2,12 @@ import React from 'react';
 
 import './loader.css';
 
-export default () => (
-	<div className="app-loader">
-		<div className="app-loader-icon"></div>
-	</div>
-);
+function Loader() {
+	return (
+		<div className="app-loader">
+			<div className="app-loader-icon"></div>
+		</div>
+	);
+}
+
+export default Loader;

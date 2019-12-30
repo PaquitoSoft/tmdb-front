@@ -1,34 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import { useAppContext } from '../../app-context/app-context';
-import MediaImage from '../../shared/media-image/media-image';
-import MiniCard from '../../shared/mini-card/mini-card';
+
+import SearchResult from './search-result/search-result';
 
 import './searcher.css';
-
-function SearchResult({ tvShow, onClick }) {
-	return (
-		<Link 
-			className="searcher__result" 
-			to={`/tvshow/${tvShow.id}`} 
-			onClick={onClick}
-		>
-			<MiniCard>
-				<MiniCard.Media>
-					<MediaImage 
-						path={tvShow.backdropImagePath} 
-						type="backdrop"
-						sizes="14vw"
-						ratio={1.71}
-						alt={tvShow.name}
-					/>
-				</MiniCard.Media>
-				<MiniCard.Title noMultiline>{tvShow.name}</MiniCard.Title>
-			</MiniCard>
-		</Link>
-	);
-}
 
 const SEARCH_QUERY = `
 	query SearchTvShows($searchTerm: String!) {

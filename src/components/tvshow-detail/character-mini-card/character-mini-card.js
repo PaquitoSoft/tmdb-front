@@ -1,9 +1,10 @@
 import React from 'react';
+import { shape, string } from 'prop-types';
 
 import MediaImage from '../../shared/media-image/media-image';
 import MiniCard from '../../shared/mini-card/mini-card';
 
-export default function CharacterMiniCard({ character }) {
+function CharacterMiniCard({ character }) {
 	const {
 		imagePath,
 		name,
@@ -26,3 +27,13 @@ export default function CharacterMiniCard({ character }) {
 		</MiniCard>
 	);
 }
+
+CharacterMiniCard.propTypes = {
+	character: shape({
+		imagePath: string,
+		name: string,
+		actorName: string
+	})
+}
+
+export default CharacterMiniCard;

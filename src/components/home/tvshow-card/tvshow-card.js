@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { shape, number, string, bool } from 'prop-types';
 
 import MediaImage from '../../shared/media-image/media-image';
 import RatingIcon from '../../shared/rating-icon/rating-icon';
@@ -7,7 +8,7 @@ import FavoriteIcon from '../../shared/favorite-icon/favorite-icon';
 
 import './tvshow-card.css';
 
-export default function TvShowCard({ tvShow = {} }) {
+function TvShowCard({ tvShow = {} }) {
 	const {
 		id,
 		name,
@@ -43,3 +44,15 @@ export default function TvShowCard({ tvShow = {} }) {
 		</Link>
 	);
 }
+TvShowCard.propTypes = {
+	tvShow: shape({
+		id: number,
+		name: string,
+		backdropImagePath: string,
+		votesAverage: number,
+		isFavorite: bool,
+		firstAirDate: string
+	}).isRequired
+};
+
+export default TvShowCard;

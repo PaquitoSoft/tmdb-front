@@ -16,6 +16,9 @@ export default function ThemModeSwitch() {
 				<div 
 					className="theme-mode-switch__button"
 					onClick={toggleThemeMode}
+					onKeyDown={toggleThemeMode}
+					role="button"
+					tabIndex="0"
 				/>
 			</div>
 			<DarkModeIcon className="theme-mode-switch__icon" />

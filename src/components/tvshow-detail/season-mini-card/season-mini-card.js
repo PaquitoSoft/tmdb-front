@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { shape, string, number } from 'prop-types';
 
 import MediaImage from '../../shared/media-image/media-image';
 import MiniCard from '../../shared/mini-card/mini-card';
 
-export default function SeasonMiniCard({ season, tvShowId }) {
+function SeasonMiniCard({ season, tvShowId }) {
 	const {
 		posterPath,
 		seasonNumber,
@@ -34,3 +35,15 @@ export default function SeasonMiniCard({ season, tvShowId }) {
 		</Link>
 	);
 }
+
+SeasonMiniCard.propTypes = {
+	season: shape({
+		posterPath: string,
+		seasonNumber: number,
+		airDate: string,
+		episodesCount: number
+	}),
+	tvShowId: number
+};
+
+export default SeasonMiniCard;

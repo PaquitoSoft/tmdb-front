@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { AppProvider } from './components/app-context/app-context';

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { shape, number, string, bool, array } from 'prop-types';
 
 import { useAppContext } from '../app-context/app-context';
 
@@ -67,7 +68,7 @@ export default function TvShowDetailView({ data }) {
 			})
 		})
 		.catch(error => {
-			console.error(`Error setting favorite value for TvShow ${tvShowId}`);
+			console.error(`Error setting favorite value for TvShow ${tvShowId}:`, error);
 		});
 	}
 	
@@ -143,6 +144,22 @@ export default function TvShowDetailView({ data }) {
 		</section>
 	)
 }
+
+TvShowDetailView.propTypes = {
+	data: shape({
+		getTvShowDetails: shape({
+			id: number,
+			name: string,
+			posterPath: string,
+			firstAirDate: string,
+			overview: string,
+			votesAverage: number,
+			isFavorite: bool,
+			seasons: array,
+			cast: array
+		})
+	})
+};
 
 TvShowDetailView.buildDataFetchRequestData = ({ 
 	urlParams: { tvShowId } 

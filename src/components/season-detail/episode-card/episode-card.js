@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { shape, string, number } from 'prop-types';
 
-import './episode-card.css';
 import RatingIcon from '../../shared/rating-icon/rating-icon';
 import MediaImage from '../../shared/media-image/media-image';
 
+import './episode-card.css';
+
 const NOW = Date.now();
 
-export default function EpisodeCard({ episode }) {
+function EpisodeCard({ episode }) {
 	const {
 		name,
 		episodeNumber,
@@ -47,6 +49,9 @@ export default function EpisodeCard({ episode }) {
 						<span 
 							className="episode-card__overview-link"
 							onClick={() => toggleOverviewVisibility(true)}
+							onKeyDown={() => toggleOverviewVisibility(true)}
+							role="button"
+							tabIndex="0"
 						>See overview</span>
 					}
 				</div>
@@ -55,6 +60,9 @@ export default function EpisodeCard({ episode }) {
 				<div 
 					className="episode-card__overview-panel"
 					onClick={() => toggleOverviewVisibility(false)}
+					onKeyDown={() => toggleOverviewVisibility(false)}
+					role="button"
+					tabIndex="0"
 				>
 					<div className="episode-card__overview-content">
 						<h4 className="episode-card__overview-title">{name}</h4>
@@ -65,3 +73,16 @@ export default function EpisodeCard({ episode }) {
 		</div>
 	);
 }
+
+EpisodeCard.propTypes = {
+	episode: shape({
+		name: string,
+		episodeNumber: number,
+		imagePath: string,
+		airDate: string,
+		voteAverage: number,
+		overview: string
+	})
+};
+
+export default EpisodeCard;

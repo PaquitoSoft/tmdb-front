@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from 'react';
+import { string, number } from 'prop-types';
+
 import { useAppContext } from '../../app-context/app-context';
 
 /*
@@ -6,7 +8,7 @@ import { useAppContext } from '../../app-context/app-context';
 	from the total available
 	(https://web.dev/use-srcset-to-automatically-choose-the-right-image/#what-about-the-display-size-of-the-image)
 */
-export default function MediaImage({ 
+function MediaImage({ 
 	path, 
 	type = 'poster', 
 	sizes = '', 
@@ -22,7 +24,7 @@ export default function MediaImage({
 		if (!path) {
 			let { clientHeight, clientWidth } = $img.current;
 			if (ratio) clientHeight = Math.trunc(clientWidth / ratio);
-			$img.current.src = `https://picsum.photos/id/1025/${clientWidth}/${clientHeight}?grayscale`;;
+			$img.current.src = `https://picsum.photos/id/1025/${clientWidth}/${clientHeight}?grayscale`;
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -45,3 +47,13 @@ export default function MediaImage({
 	);
 
 }
+
+MediaImage.propTypes = {
+	path: string.isRequired, 
+	type: string,
+	sizes: string, 
+	ratio: number,
+	className: string
+};
+
+export default MediaImage;

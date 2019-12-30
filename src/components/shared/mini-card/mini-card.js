@@ -1,4 +1,5 @@
 import React from 'react';
+import { string, node, bool } from 'prop-types';
 
 import './mini-card.css';
 
@@ -17,6 +18,25 @@ function MiniCard({ children, className = '' }) {
 	);
 	
 }
+
+Media.propTypes = {
+	className: string,
+	children: node.isRequired
+};
+Title.propTypes = {
+	className: string,
+	noMultiline: bool,
+	children: node.isRequired
+}
+Subtitle.propTypes = {
+	className: string,
+	children: node.isRequired
+};
+
+MiniCard.propTypes = {
+	className: string,
+	children: node.isRequired
+};
 
 MiniCard.Media = Media;
 MiniCard.Title = Title;

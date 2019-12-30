@@ -1,4 +1,5 @@
 import React from 'react';
+import { bool, string, func } from 'prop-types';
 
 import { ReactComponent as FavoriteEnabledIcon } from './favorite-enabled-icon.svg';
 import { ReactComponent as FavoriteDisabledIcon } from './favorite-disabled-icon.svg';
@@ -7,7 +8,7 @@ import './favorite-icon.css';
 
 const noop = () => false;
 
-export default function FavoriteIcon({ isActive, className = '', onClick = noop }) {
+function FavoriteIcon({ isActive, className = '', onClick = noop }) {
 	const Icon = isActive ? FavoriteEnabledIcon : FavoriteDisabledIcon;
 	return (
 		<Icon 
@@ -17,3 +18,11 @@ export default function FavoriteIcon({ isActive, className = '', onClick = noop 
 		/>		
 	);
 }
+
+FavoriteIcon.propTypes = {
+	isActive: bool,
+	className: string,
+	onClick: func
+};
+
+export default FavoriteIcon;

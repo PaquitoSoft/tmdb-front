@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { shape, string, number, array } from 'prop-types';
 
 import EpisodeCard from './episode-card/episode-card';
 
@@ -28,7 +29,7 @@ const viewDataQuery = `
 	}
 `;
 
-export default function SeasonDetailView({ data }) {
+function SeasonDetailView({ data }) {
 	const {
 		name,
 		airDate,
@@ -57,6 +58,20 @@ export default function SeasonDetailView({ data }) {
 	)
 }
 
+SeasonDetailView.propTypes = {
+	data: shape({
+		getSeasonDetails: shape({
+			name: string,
+			airDate: string,
+			episodes: array
+		}),
+		getTvShowDetails: shape({
+			id: number,
+			name: string
+		})
+	})
+};
+
 SeasonDetailView.buildDataFetchRequestData = ({ 
 	urlParams: { tvShowId, seasonNumber} 
 }) => ({
@@ -66,3 +81,5 @@ SeasonDetailView.buildDataFetchRequestData = ({
 		seasonNumber: parseInt(seasonNumber, 0)
 	}
 });
+
+export default SeasonDetailView;

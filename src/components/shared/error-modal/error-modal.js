@@ -1,9 +1,11 @@
 import React from 'react';
+import { object } from 'prop-types';
+
 import { useAppContext } from '../../app-context/app-context';
 
 import './error-modal.css';
 
-export default function ErrorModal({ error }) {
+function ErrorModal({ error }) {
 	const { setError } = useAppContext();
 	console.error('App unexpected error:', error);
 
@@ -25,3 +27,9 @@ export default function ErrorModal({ error }) {
 		</div>
 	);
 }
+
+ErrorModal.propTypes = {
+	error: object
+};
+
+export default ErrorModal;
