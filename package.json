@@ -21,8 +21,8 @@
     "analyze": "npm run build && source-map-explorer 'build/static/js/*.js'",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-	"test:integration": "start-server-and-test start http-get://localhost:3000/ cypress:run",
-	"lint": "eslint src"
+    "test:integration": "start-server-and-test start http-get://localhost:3000/ cypress:run",
+    "lint": "eslint src"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "cypress": "^3.8.1",
+    "cypress-plugin-snapshots": "^1.2.9",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.3",

@@ -49,7 +49,7 @@ function MediaImage({
 }
 
 MediaImage.propTypes = {
-	path: string.isRequired, 
+	path: string, 
 	type: string,
 	sizes: string, 
 	ratio: number,
